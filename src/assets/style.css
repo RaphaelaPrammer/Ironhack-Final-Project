@@ -1,19 +1,92 @@
-/* :root {
-    --colorWhite: #ffffff;
-    --colorBlack: #000000;
-    --colorRed: red;
-    --fontSize-sm: 16px;
-    --fontFamily: 'Arial, Helvetica, sans-serif';
-    --fontTitle: 'Arial';
-    --fontBody: 'Helvetica';
-} */
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;600;800&display=swap");
+
+:root {
+  --colorWhite: #fefeff;
+  --colorLightBlue: #d6efff;
+  --colorMnBlue: #344b6f;
+  --colorCoolGrey: #8688a2;
+  --colorHeliotropeGrey: #a396a3;
+  --colorPastelPink: #d1abad;
+  --colorBlack: #000000;
+  --fontSize-sm: 16px;
+  --fontFamily: "Arial, Helvetica, sans-serif";
+  --fontTitle: "Arial";
+  --fontBody: "Helvetica";
+}
+
+* {
+  font-family: "Catamaran", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+/* background: hsla(240, 100%, 100%, 1);
+
+background: linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", endColorstr="#d6efff", GradientType=1 ); */
 
 /* SignIn Component */
+.general-container {
+  display: flex;
+  flex-direction: column;
+}
+.header-img img {
+  width: 50px;
+}
+.img {
+  background-image: url("https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg");
+  height: 30vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.container {
+  background-color: var(--colorPastelPink);
+  border-radius: 36% 64% 18% 82% / 49% 30% 70% 51%;
+  /* border-top-left-radius: 20px; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
 
-/* h1 {
-    color: var(--colorRed);
-} */
+.header-title {
+  font-size: 2rem;
+}
+.header-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
 
+.input-field-label {
+  font-size: 1.4rem;
+}
+.input-field {
+  width: 40%;
+  height: 30px;
+}
+.button {
+  background-color: rgba(0, 0, 0, 0.986);
+  color: white;
+  font-weight: 600;
+  width: 40%;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
 /* SignUp Component */
 
 /* Home view */

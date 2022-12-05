@@ -1,61 +1,69 @@
 <template>
-  <div class="container">
-
-    <div class="header">
-      <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+  <div class="general-container">
+    <div class="img"></div>
+    <div class="container">
+      <div class="header">
+        <div class="header-description">
+          <div class="header-img">
+            <img
+              src="https://media.istockphoto.com/id/1188848722/es/vector/icono-de-impresi%C3%B3n-de-pata-de-animal-impresi%C3%B3n-de-pata-de-perro-o-gato.jpg?s=612x612&w=0&k=20&c=SuPNtRgRFp8quBl2tSqB7Ddg1nvPcW1JkduXWI0LnwA="
+              alt="header-img"
+            />
+          </div>
+          <h3 class="header-title">Register to ToDo App</h3>
+          <p class="header-subtitle">Start organizing your tasks!</p>
+        </div>
       </div>
+
+      <form @submit.prevent="signUp" class="form-sign-in">
+        <div class="form">
+          <div class="form-input">
+            <label class="input-field-label">E-mail</label>
+            <input
+              type="email"
+              class="input-field"
+              placeholder="example@gmail.com"
+              id="email"
+              v-model="email"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label class="input-field-label">Password</label>
+            <input
+              type="password"
+              class="input-field"
+              placeholder="**********"
+              id="password"
+              v-model="password"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label class="input-field-label">Confirm password</label>
+            <input
+              type="password"
+              class="input-field"
+              placeholder="**********"
+              id="confirmPassword"
+              v-model="confirmPassword"
+              required
+            />
+          </div>
+          <button class="button" type="submit">Sign Up</button>
+          <p>
+            Have an account?
+            <PersonalRouter
+              :route="route"
+              :buttonText="buttonText"
+              class="sign-up-link"
+            />
+          </p>
+        </div>
+      </form>
+
+      <div v-show="errorMsg">{{ errorMsg }}</div>
     </div>
-
-    <form @submit.prevent="signUp" class="form-sign-in">
-      <div class="form">
-        <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            id="email"
-            v-model="email"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">Password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="password"
-            v-model="password"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="confirmPassword"
-            v-model="confirmPassword"
-            required
-          />
-        </div>
-        <button class="button" type="submit">Sign Up</button>
-        <p>
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
-      </div>
-    </form>
-
-    <div v-show="errorMsg">{{errorMsg}}</div>
   </div>
 </template>
 
@@ -104,4 +112,8 @@ const signUp = async () => {
 };
 </script>
 
-<style></style>
+<style>
+/* body {
+  background-color: black;
+} */
+</style>
