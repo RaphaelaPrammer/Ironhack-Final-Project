@@ -10,7 +10,7 @@
               alt="header-img"
             />
           </div>
-          <h3 class="header-title">Register to ToDo App</h3>
+          <h3 class="header-title">Register to ToDoG App</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
         </div>
       </div>

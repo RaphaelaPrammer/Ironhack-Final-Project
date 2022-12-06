@@ -12,7 +12,7 @@
               alt="header-img"
             />
           </div>
-          <h3 class="header-title">Log In to ToDo App</h3>
+          <h3 class="header-title">Log In to ToDoG App</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
         </div>
       </div>
@@ -65,16 +65,43 @@
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
+import { supabase } from "../supabase";
+import { useRouter } from "vue-router";
+import { useUserStore } from "../stores/user";
+import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/signup";
 const buttonText = "Sign Up";
 
+// Input Fields
+const email = ref("");
+const password = ref("");
+
+// Error Message
+const errorMsg = ref("");
+
+// Router to push user once SignedUp to Log In
+const redirect = useRouter();
+
 // Arrow function to Signin user to supaBase
 const signIn = async () => {
   try {
-  } catch (error) {}
+    await useUserStore().signIn(email.value, password.value);
+
+    redirect.push({ path: "/" });
+  } catch (error) {
+    errorMsg.value = error.message;
+
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
+  }
+  return;
+
+  errorMsg.value = "error";
 };
 </script>
 

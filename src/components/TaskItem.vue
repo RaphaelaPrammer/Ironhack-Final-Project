@@ -1,26 +1,65 @@
 <template>
-<div class="container">
-    <h3>{{task.title}}</h3>
-    <button @click="deleteTask">Delete {{task.title}}</button>
-</div>
+  <div class="container-task">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <button @click="deleteTask">Delete {{ task.title }}</button>
+    <button @click="changeBooleanFunction">Edit</button>
+    <div v-show="changeBoolean">
+      <input type="text" placeholder="Change Title" v-model="name" />
+      <input
+        placeholder="change Description"
+        type="text"
+        v-model="description"
+      />
+      <button @click="changeTask">Edit</button>
+    </div>
+    <button @click="isCompleteFunction">Task Completed</button>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useTaskStore } from '../stores/task';
-import { supabase } from '../supabase';
+import { ref } from "vue";
+import { useTaskStore } from "../stores/task";
+import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
-
+const emit = defineEmits(["getTasksHijo"]);
+const name = ref("");
+const description = ref("");
 const props = defineProps({
-    task: Object,
+  task: Object,
 });
-
+//-----------------------------------------------------
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
-const deleteTask = async() => {
-    await taskStore.deleteTask(props.task.id);
+
+const deleteTask = async () => {
+  await taskStore.deleteTask(props.task.id);
+  emit("getTasksHijo");
+};
+//----------------------------------------------------------
+//Functioin para cambiar task
+const changeBoolean = ref(false);
+const changeBooleanFunction = () => {
+  changeBoolean.value = !changeBoolean.value;
+};
+const changeTask = async () => {
+  await taskStore.changeTask(name.value, description.value, props.task.id);
+  changeBoolean.value = false;
+  emit("getTasksHijo");
 };
 
+//------------------------------------------------------------
+
+const isComplete = ref(false);
+const isCompleteFunction = () => {
+  isComplete.value = !isComplete.value;
+};
+
+const changeStatus = async () => {
+  await taskStore.changeStatus(props.task.id, isComplete.value);
+
+  emit("getTasksHijo");
+};
 </script>
 
 <style></style>
