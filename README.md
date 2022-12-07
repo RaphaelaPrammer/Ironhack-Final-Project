@@ -4,7 +4,7 @@
 
 - [Git Hub Repo](https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
 - [Trello](https://trello.com/b/lIvFDEqV/finalproject)
-- Deploy of the project:
+- [Deploy of the project](https://ironhack-final-project.vercel.app/auth/login)
 
 ## Project Description
 
@@ -34,9 +34,10 @@
 
 ### 7.12.
 
-- [ ] launch Project to Vercel
-- [ ] task completed logic + styling with line-trough
+- [x] launch Project to Vercel
+- [x] task completed logic + styling with line-trough
 - [ ] implement Nav Bar and Footer
+- [ ] Hamburger Menu
 - [ ] Router Links
 - [ ] CSS for Add New Task
 - [ ] CSS for Task List

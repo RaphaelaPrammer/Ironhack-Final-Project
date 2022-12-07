@@ -1,14 +1,11 @@
 <template>
   <div class="general-container">
-    <div class="img"></div>
-    <div class="container">
+    <div class="header-img"></div>
+    <div class="container-sign-in">
       <div class="header">
         <div class="header-description">
-          <div class="header-img">
-            <img
-              src="https://media.istockphoto.com/id/1188848722/es/vector/icono-de-impresi%C3%B3n-de-pata-de-animal-impresi%C3%B3n-de-pata-de-perro-o-gato.jpg?s=612x612&w=0&k=20&c=SuPNtRgRFp8quBl2tSqB7Ddg1nvPcW1JkduXWI0LnwA="
-              alt="header-img"
-            />
+          <div class="header-logo">
+            <img src="../assets/imgs/pfote.jpg" alt="header-img" />
           </div>
           <h3 class="header-title">Register to ToDoG App</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
@@ -50,7 +47,8 @@
               required
             />
           </div>
-          <button class="button" type="submit">Sign Up</button>
+          <BlackButton type="submit">Sign Up</BlackButton>
+          <!-- <button class="button" type="submit">Sign Up</button> -->
           <p>
             Have an account?
             <PersonalRouter
@@ -74,6 +72,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import BlackButton from "../components/BlackButton.vue";
 
 // Route Variables
 const route = "/auth/login";

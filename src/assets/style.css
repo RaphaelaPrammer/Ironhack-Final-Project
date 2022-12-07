@@ -8,10 +8,18 @@
   --colorHeliotropeGrey: #a396a3;
   --colorPastelPink: #d1abad;
   --colorBlack: #000000;
-  --fontSize-sm: 16px;
+  --box-shadow-1: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+    25px 0 20px -20px rgba(0, 0, 0, 0.45),
+    0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+    -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+  --box-shadow-imgs: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  --icon-width: 20px;
+  --icon-height: 20px;
+  /* --fontSize-sm: 16px;
   --fontFamily: "Arial, Helvetica, sans-serif";
   --fontTitle: "Arial";
-  --fontBody: "Helvetica";
+  --fontBody: "Helvetica"; */
 }
 
 * {
@@ -35,13 +43,17 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 .general-container {
   display: flex;
   flex-direction: column;
+  /* background-image: url("../assets/imgs/pfote.jpg");
+  background-size: 20px; */
 }
-.header-img img {
+.header-logo img {
   width: 50px;
+  box-shadow: var(--box-shadow-imgs);
 }
-.img {
+.header-img {
   background-image: url("https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg");
   height: 30vh;
+  box-shadow: var(--box-shadow-imgs);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,10 +65,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
   justify-content: center;
   margin-bottom: 15px;
 }
-.container {
+.container-sign-in {
   background-color: var(--colorPastelPink);
-  border-radius: 36% 64% 18% 82% / 49% 30% 70% 51%;
-  /* border-top-left-radius: 20px; */
+  opacity: 1;
+  border-radius: 36% 64% 18% 82% / 49% 50% 60% 40%;
+  box-shadow: var(--box-shadow-imgs);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -75,20 +88,169 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 .input-field-label {
   font-size: 1.4rem;
 }
-.input-field {
+.form-sign-in input {
   width: 40%;
   height: 30px;
+  padding-left: 5px;
 }
-.button {
-  background-color: rgba(0, 0, 0, 0.986);
+/* .button {
+  background-color: var(--colorBlack);
+  box-shadow: var(--box-shadow-imgs);
   color: white;
+  font-size: 1.2rem;
   font-weight: 600;
-  width: 40%;
-  padding: 5px 0;
+  border-radius: 10px;
+  width: 30%;
+  padding: 8px 0;
   margin-bottom: 15px;
-}
-/* SignUp Component */
+} */
 
-/* Home view */
+/* -------------SignUp Component-------------- */
+
+/* --------------Home view-------------------- */
+
+/* ---------------NAV-BAR--------------- */
+nav img {
+  width: 40px;
+  box-shadow: var(--box-shadow-imgs);
+}
+.link {
+  text-decoration: none;
+}
+nav {
+  background-color: var(--colorHeliotropeGrey);
+  border-radius: 0px 0px 20px 20px;
+  width: 100vw;
+  height: 70px;
+  box-shadow: var(--box-shadow-1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+ul.log-out-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 10px 0;
+  gap: 5px;
+}
+/* .button-log-out {
+  background-color: var(--colorBlack);
+  box-shadow: var(--box-shadow-imgs);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 70px;
+  padding: 8px 0px;
+  margin-bottom: 15px;
+} */
+
+/* ---------YOUR ACCOUNT-------------*/
+.content {
+  text-align: end;
+  background-color: var(--colorPastelPink);
+  width: 100px;
+  margin: 0 5px 0 auto;
+}
+.content img {
+  width: 20px;
+  float: left;
+}
+/* --------------------------------------------*/
+/* -------------------ADD NEW TASK-------------*/
+.new-tasks-container,
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.add-task-container input {
+  width: 80vw;
+  height: 20px;
+}
+/* --------------------------------------------*/
+/* -------------------All TASKS ---------------*/
+.container-task {
+  background: var(--colorLightBlue);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 10px auto;
+}
+
+.btn-delete {
+  background-image: url("./icons/delete-red.png");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+.btn-edit {
+  background-image: url("./icons/edit-done.png");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+
+.btn-complete {
+  background-image: url("./icons/task_done_green.png");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+.btn-not-complete {
+  background-image: url("./icons/task-not-completed-red.png");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+/* --------------------------------------------*/
+/* -------------------FOOTER------------------*/
+
+footer {
+  width: 100vw;
+  height: 20px;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--colorPastelPink);
+  box-shadow: var(--box-shadow-1);
+  padding: 10px 0;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  /* text-align: center; */
+}
+
+.footer-image img {
+  width: 20px;
+}
 
 /* Account View */

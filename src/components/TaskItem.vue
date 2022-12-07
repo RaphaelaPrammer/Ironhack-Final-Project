@@ -1,19 +1,32 @@
 <template>
   <div class="container-task">
-    <h3>{{ task.title }}</h3>
-    <p>{{ task.description }}</p>
-    <button @click="deleteTask">Delete {{ task.title }}</button>
-    <button @click="changeBooleanFunction">Edit</button>
-    <div v-show="changeBoolean">
-      <input type="text" placeholder="Change Title" v-model="name" />
-      <input
-        placeholder="change Description"
-        type="text"
-        v-model="description"
-      />
-      <button @click="changeTask">Edit</button>
+    <div>
+      <h3 v-bind:class="isComplete ? 'completed' : 'not-completed'">
+        {{ task.title }}
+      </h3>
+      <p v-bind:class="isComplete ? 'completed' : 'not-completed'">
+        {{ task.description }}
+      </p>
     </div>
-    <button @click="isCompleteFunction">Task Completed</button>
+    <div>
+      <button
+        class="btn-not-complete"
+        v-if="isComplete"
+        @click="changeStatus"
+      ></button>
+      <button class="btn-complete" v-else @click="changeStatus"></button>
+      <button class="btn-edit" @click="changeBooleanFunction"></button>
+      <div v-show="changeBoolean">
+        <input type="text" placeholder="Change Title" v-model="name" />
+        <input
+          placeholder="change Description"
+          type="text"
+          v-model="description"
+        />
+        <button class="btn-edit-complete" @click="changeTask">Save</button>
+      </div>
+      <button class="btn-delete" @click="deleteTask"></button>
+    </div>
   </div>
 </template>
 
@@ -38,6 +51,7 @@ const deleteTask = async () => {
 };
 //----------------------------------------------------------
 //Functioin para cambiar task
+
 const changeBoolean = ref(false);
 const changeBooleanFunction = () => {
   changeBoolean.value = !changeBoolean.value;
@@ -49,20 +63,31 @@ const changeTask = async () => {
 };
 
 //------------------------------------------------------------
+// Function for Completion Tasks----------
 
-const isComplete = ref(false);
-const isCompleteFunction = () => {
-  isComplete.value = !isComplete.value;
-};
-
+const isComplete = ref(props.task.is_complete);
 const changeStatus = async () => {
   await taskStore.changeStatus(props.task.id, isComplete.value);
-
+  isComplete.value = !isComplete.value;
   emit("getTasksHijo");
 };
+// Other Way!!
+// const changeStatus = async () => {
+//   await taskStore.changeStatus(props.task.id, !props.task.is_complete);
+//   emit("getTasksHijo");
+// };
+// -->with this approach - change isComplete in the v-bind:class to props.task.is_complete
 </script>
 
-<style></style>
+<style>
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+.not-completed {
+  color: blue;
+}
+</style>
 
 <!--
 **Hints**

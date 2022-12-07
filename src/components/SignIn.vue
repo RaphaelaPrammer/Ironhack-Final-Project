@@ -2,11 +2,11 @@
 
 <template>
   <div class="general-container">
-    <div class="img"></div>
-    <div class="container">
+    <div class="header-img"></div>
+    <div class="container-sign-in">
       <div class="header">
         <div class="header-description">
-          <div class="header-img">
+          <div class="header-logo">
             <img
               src="https://media.istockphoto.com/id/1188848722/es/vector/icono-de-impresi%C3%B3n-de-pata-de-animal-impresi%C3%B3n-de-pata-de-perro-o-gato.jpg?s=612x612&w=0&k=20&c=SuPNtRgRFp8quBl2tSqB7Ddg1nvPcW1JkduXWI0LnwA="
               alt="header-img"
@@ -41,8 +41,8 @@
               required
             />
           </div>
-
-          <button class="button" type="submit">Sign In</button>
+          <BlackButton type="submit">Sign In</BlackButton>
+          <!-- <button class="button" type="submit">Sign In</button> -->
           <p>
             Dont have an account?
             <PersonalRouter
@@ -57,11 +57,6 @@
       <div v-show="errorMsg">{{ errorMsg }}</div>
     </div>
   </div>
-  <!-- <div class="container">
-    <h3 class="header-title">Log In to ToDo App</h3>
-    <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p>
-    <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
-  </div> -->
 </template>
 
 <script setup>
@@ -71,6 +66,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import BlackButton from "../components/BlackButton.vue";
 
 // Route Variables
 const route = "/auth/signup";

@@ -1,31 +1,34 @@
 <template>
-  <h1>Add a new Task</h1>
-  <div v-if="showErrorMessage">
-    <p class="error-text">{{ errorMessage }}</p>
-  </div>
-  <div>
-    <div class="input-field">
-      <input
-        type="text"
-        placeholder="Add a Task Title - Listen to Kendrick Lamar"
-        v-model="name"
-      />
+  <div class="new-tasks-container">
+    <h1>Add a new Task</h1>
+    <div v-if="showErrorMessage">
+      <p class="error-text">{{ errorMessage }}</p>
     </div>
-    <div class="input-field">
-      <input
-        type="text"
-        placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album."
-        v-model="description"
-      />
+    <div class="add-task-container">
+      <div class="input-field">
+        <input
+          type="text"
+          placeholder="Add a Task Title - Go to the Park and Play"
+          v-model="name"
+        />
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          placeholder="Add a Task Description - Bring the ball, cookies and a stick."
+          v-model="description"
+        />
+      </div>
+      <BlackButton @logOut="addTask">Add</BlackButton>
+      <!-- <button @click="addTask" class="button">Add</button> -->
     </div>
-    <button @click="addTask" class="button">Add</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
-
+import BlackButton from "./BlackButton.vue";
 const taskStore = useTaskStore();
 const emit = defineEmits(["getTasksHijo"]);
 

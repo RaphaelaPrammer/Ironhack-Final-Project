@@ -4,8 +4,10 @@
 
     <div class="content">
       <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
+      <img src="../assets/imgs/pfote.jpg" alt="" />
+      <router-link to="/account">Go to Account</router-link>
     </div>
+
     <NewTask @getTasksHijo="getTasks" />
     <h1>Tasks:</h1>
     <TaskItem
@@ -14,6 +16,7 @@
       :task="task"
       @getTasksHijo="getTasks"
     />
+    <Footer />
   </div>
 </template>
 
@@ -24,6 +27,7 @@ import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+import Footer from "../components/Footer.vue";
 
 const taskStore = useTaskStore();
 
@@ -66,9 +70,11 @@ mentioned on hint4.
 will be used to define 2 constants. 1 of this constants will take care of setting the boolean value to the opposite of the 
 value that checks wether this task is_complete. 1 of this constants will take of calling the id of this specific task in 
 order to call the right id. 
+
 7.2-customEvent will fire an asynf function that will take in 1 param/argument. This async function's body will be used to 
 call the deleteTaskmethod which will take the param/argument's id in order to delete the task. This function needs to call 
 the function mentioned on hint4. 
+
 7.3-customEvent will fire an async function that will take in 1 param/argument. this async function's body will be used to 
 take in 2 constants. 1 constant will take in the param/argument newValue. 1 constant will be used to get the param/argument 
 oldValue id. These 2 constants will be sent to the backend via the useTaskStore which holds an editTask method. This function 
