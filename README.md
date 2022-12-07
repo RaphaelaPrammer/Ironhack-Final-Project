@@ -1,3 +1,47 @@
+# TO DOG LIST - Ironhack Final Project
+
+###
+
+[Git Hub Repo](.https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
+[Trello](.https://trello.com/b/lIvFDEqV/finalproject)
+Deploy of the project:
+
+## Project Description
+
+### Technologies used:
+
+- **Client:** Vue.js y Vite
+- **Router:** Vue Router
+- **Store:** Pinia to connect to backend
+- **Database:** Supabase
+
+## Project Progress:
+
+### 5.12.
+
+[x] Create Database in Supabase
+[x] Implementing HTML and CSS for Sing- Up Form
+[x] Implementing HTML and CSS for Sing- In Form
+
+### 6.12.
+
+[x] link app to supabase
+[x] login functionality
+[x] logout functionality
+[x] add new task item + refresh auto
+[x] delete task item + refresh auto
+[x] change task title and description + refresh auto
+
+### 7.12.
+
+[] task completed logic + styling with line-trough
+[] implement Nav Bar and Footer
+[] Router Links
+[] CSS for Add New Task
+[] CSS for Task List
+
+---
+
 # [](https://github.com/zantonz/final-project/blob/master/README.md)ToDo App
 
 [Click para acceder a la web](https://todo-zantonz.vercel.app/)
@@ -64,11 +108,3 @@ Es una aplicacion creada con Vue.js que permite a usuarios crear una cuenta, añ
 - Implementar funcionalidad del Timer
 
 ---
-
-6.12.
-
-- login
-- logout
-- add task item - refresh auto
-- delete task item - refresh auto
-- change task item
