@@ -2,8 +2,8 @@
 
 ### Links:
 
-- [Git Hub Repo](.https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
-- [Trello](.https://trello.com/b/lIvFDEqV/finalproject)
+- [Git Hub Repo](https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
+- [Trello](https://trello.com/b/lIvFDEqV/finalproject)
 - Deploy of the project:
 
 ## Project Description
