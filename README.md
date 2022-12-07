@@ -19,26 +19,26 @@ Deploy of the project:
 
 ### 5.12.
 
-[x] Create Database in Supabase
-[x] Implementing HTML and CSS for Sing- Up Form
-[x] Implementing HTML and CSS for Sing- In Form
+- [x] Create Database in Supabase
+- [x] Implementing HTML and CSS for Sing- Up Form
+- [x] Implementing HTML and CSS for Sing- In Form
 
 ### 6.12.
 
-[x] link app to supabase
-[x] login functionality
-[x] logout functionality
-[x] add new task item + refresh auto
-[x] delete task item + refresh auto
-[x] change task title and description + refresh auto
+- [x] link app to supabase
+- [x] login functionality
+- [x] logout functionality
+- [x] add new task item + refresh auto
+- [x] delete task item + refresh auto
+- [x] change task title and description + refresh auto
 
 ### 7.12.
 
-[] task completed logic + styling with line-trough
-[] implement Nav Bar and Footer
-[] Router Links
-[] CSS for Add New Task
-[] CSS for Task List
+- [ ] task completed logic + styling with line-trough
+- [ ] implement Nav Bar and Footer
+- [ ] Router Links
+- [ ] CSS for Add New Task
+- [ ] CSS for Task List
 
 ---
 
