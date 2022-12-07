@@ -1,10 +1,10 @@
 # TO DOG LIST - Ironhack Final Project
 
-###
+### Links:
 
-[Git Hub Repo](.https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
-[Trello](.https://trello.com/b/lIvFDEqV/finalproject)
-Deploy of the project:
+- [Git Hub Repo](.https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
+- [Trello](.https://trello.com/b/lIvFDEqV/finalproject)
+- Deploy of the project:
 
 ## Project Description
 
@@ -34,6 +34,7 @@ Deploy of the project:
 
 ### 7.12.
 
+- [ ] launch Project to Vercel
 - [ ] task completed logic + styling with line-trough
 - [ ] implement Nav Bar and Footer
 - [ ] Router Links
