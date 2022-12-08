@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="navbar">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <router-link to="/">
       <img src="../assets/imgs/pfote.jpg" alt="" />

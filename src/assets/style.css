@@ -29,31 +29,23 @@
   font-size: 10px;
 }
 
-/* background: hsla(240, 100%, 100%, 1);
-
-background: linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
-
-background: -moz-linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203, 100%, 92%, 1) 33%, hsla(36, 98%, 77%, 1) 57%, hsla(38, 98%, 80%, 1) 84%, hsla(8, 99%, 65%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", endColorstr="#d6efff", GradientType=1 ); */
-
 /* SignIn Component */
 .general-container {
   display: flex;
   flex-direction: column;
-  /* background-image: url("../assets/imgs/pfote.jpg");
-  background-size: 20px; */
+  /* gap: 5px; */
+  background-image: url("./imgs/pfote.jpg");
+  background-repeat: repeat;
+  background-size: 50px;
 }
 .header-logo img {
   width: 50px;
-  box-shadow: var(--box-shadow-imgs);
 }
 .header-img {
   background-image: url("https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg");
-  height: 30vh;
-  box-shadow: var(--box-shadow-imgs);
+  height: 40vh;
+  /* box-shadow: var(--box-shadow-imgs); */
+  border-radius: 200px 200px 0 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,14 +59,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 }
 .container-sign-in {
   background-color: var(--colorPastelPink);
-  opacity: 1;
-  border-radius: 36% 64% 18% 82% / 49% 50% 60% 40%;
+
+  /* border-radius: 36% 64% 18% 82% / 49% 50% 60% 40%; */
+  /* border-radius: 200px; */
+  border-radius: 0 0 200px 200px;
   box-shadow: var(--box-shadow-imgs);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 70vh;
+  height: 60vh;
 }
 
 .header-title {
@@ -91,7 +85,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 .form-sign-in input {
   width: 40%;
   height: 30px;
+  border: none;
+  border-radius: 10px;
   padding-left: 5px;
+  box-shadow: var(--box-shadow-small);
+}
+.form-sign-in p {
+  margin-top: 10px;
+  font-size: 1.1rem;
 }
 /* .button {
   background-color: var(--colorBlack);
@@ -120,7 +121,7 @@ nav img {
   text-decoration: none;
 }
 nav {
-  background-color: var(--colorHeliotropeGrey);
+  background-color: var(--colorPastelPink);
   border-radius: 0px 0px 20px 20px;
   width: 100vw;
   height: 70px;
@@ -227,6 +228,7 @@ h1 {
 }
 .container-buttons {
   text-align: center;
+  margin-bottom: 5px;
 }
 .edit-input-fields {
   display: flex;

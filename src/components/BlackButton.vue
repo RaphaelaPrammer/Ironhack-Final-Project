@@ -19,6 +19,6 @@ const emit = defineEmits(["logOut"]);
 }
 .black-button:hover {
   cursor: pointer;
-  background: grey;
+  background: var(--colorMnBlue);
 }
 </style>

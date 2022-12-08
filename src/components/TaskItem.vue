@@ -13,7 +13,9 @@
         {{ task.description }}
       </p>
     </div>
+    <!-- BUTTONS  -->
     <div class="container-buttons">
+      <!-- Button change status  -->
       <button
         class="btn-not-complete"
         v-if="isComplete"
