@@ -8,13 +8,17 @@ const emit = defineEmits(["logOut"]);
 <style scoped>
 .black-button {
   background-color: var(--colorBlack);
-  box-shadow: var(--box-shadow-imgs);
+  box-shadow: var(--box-shadow-small);
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 10px;
   width: 70px;
   padding: 4px 0px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+}
+.black-button:hover {
+  cursor: pointer;
+  background: grey;
 }
 </style>

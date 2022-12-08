@@ -1,4 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;600;800&display=swap");
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5175/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module" src="./ToDo App_files/client"></script>
+
+    
+    <link rel="icon" href="http://localhost:5175/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./ToDo App_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./ToDo App_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'> -->
+
+<!-- <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css"> -->
+    <title>ToDo App</title>
+  <style type="text/css">
+.black-button[data-v-7979c4c8] {
+  background-color: var(--colorBlack);
+  box-shadow: var(--box-shadow-small);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 70px;
+  padding: 4px 0px;
+  /* margin-bottom: 15px; */
+}
+.black-button[data-v-7979c4c8]:hover {
+  cursor: pointer;
+  background: grey;
+}
+</style><style type="text/css">
+img {
+  width: 200px;
+  border-radius: 50%;
+}
+</style><style type="text/css">
+/* body {
+  background-color: black;
+} */
+</style><style type="text/css">
+/* body {
+  background-color: black;
+} */
+</style><style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;600;800&display=swap");
 
 :root {
   --colorWhite: #fefeff;
@@ -40,16 +89,19 @@ background: -webkit-linear-gradient(90deg, hsla(240, 100%, 100%, 1) 0%, hsla(203
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", endColorstr="#d6efff", GradientType=1 ); */
 
 /* SignIn Component */
+
 .general-container {
   display: flex;
   flex-direction: column;
   /* background-image: url("../assets/imgs/pfote.jpg");
   background-size: 20px; */
 }
+
 .header-logo img {
   width: 50px;
   box-shadow: var(--box-shadow-imgs);
 }
+
 .header-img {
   background-image: url("https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg");
   height: 30vh;
@@ -58,6 +110,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .form-input {
   display: flex;
   flex-direction: column;
@@ -65,6 +118,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
   justify-content: center;
   margin-bottom: 15px;
 }
+
 .container-sign-in {
   background-color: var(--colorPastelPink);
   opacity: 1;
@@ -80,6 +134,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 .header-title {
   font-size: 2rem;
 }
+
 .header-subtitle {
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -88,11 +143,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 .input-field-label {
   font-size: 1.4rem;
 }
+
 .form-sign-in input {
   width: 40%;
   height: 30px;
   padding-left: 5px;
 }
+
 /* .button {
   background-color: var(--colorBlack);
   box-shadow: var(--box-shadow-imgs);
@@ -108,17 +165,22 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#fefeff", en
 /* -------------SignUp Component-------------- */
 
 /* --------------Home view-------------------- */
+
 .wrapper {
   background-color: var(--colorLightGrey);
 }
+
 /* ---------------NAV-BAR--------------- */
+
 nav img {
   width: 40px;
   box-shadow: var(--box-shadow-imgs);
 }
+
 .link {
   text-decoration: none;
 }
+
 nav {
   background-color: var(--colorHeliotropeGrey);
   border-radius: 0px 0px 20px 20px;
@@ -130,6 +192,7 @@ nav {
   align-items: center;
   margin: 0 0 10px 0;
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -145,6 +208,7 @@ ul.log-out-welcome {
   margin: 10px 0;
   gap: 5px;
 }
+
 /* .button-log-out {
   background-color: var(--colorBlack);
   box-shadow: var(--box-shadow-imgs);
@@ -158,18 +222,23 @@ ul.log-out-welcome {
 } */
 
 /* ---------YOUR ACCOUNT-------------*/
+
 .content {
   text-align: end;
   background-color: var(--colorPastelPink);
   width: 100px;
   margin: 0 5px 0 auto;
 }
+
 .content img {
   width: 20px;
   float: left;
 }
+
 /* --------------------------------------------*/
+
 /* -------------------ADD NEW TASK-------------*/
+
 .new-tasks-container,
 .add-task-container {
   display: flex;
@@ -180,10 +249,12 @@ ul.log-out-welcome {
   align-items: center;
   gap: 10px;
 }
+
 h1 {
   font-size: 1.8rem;
   text-align: center;
 }
+
 .add-task-container input {
   width: 80vw;
   height: 25px;
@@ -192,18 +263,22 @@ h1 {
   padding-left: 5px;
   box-shadow: var(--box-shadow-small);
 }
+
 /* --------------------------------------------*/
+
 /* -------------------All TASKS ---------------*/
+
 .container-all-tasks {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* gap: 50x; */
+  gap: 5x;
   width: 90vw;
   margin: 0 auto 0 auto;
 }
+
 .container-task {
   background: var(--colorWhite);
   border-radius: 30px 5px;
@@ -211,51 +286,56 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  /* gap: 5px; */
-  min-width: 250px;
+  gap: 10px;
+  width: 300px;
   min-height: 100px;
   justify-content: center;
   align-items: center;
-  margin: 10px auto 15px auto;
+  margin: 10px auto 10px auto;
   /* padding: 10px; */
 }
+
 .top-status {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -15px;
+  text-align: center;
 }
+
 .container-buttons {
   text-align: center;
 }
+
 .edit-input-fields {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
+
 .edit-input-fields input {
   border: none;
   border-radius: 10px;
   padding-left: 5px;
   box-shadow: var(--box-shadow-small);
 }
+
 h3,
 .container-task p {
   font-size: 1.3rem;
   text-align: center;
 }
+
 .completed {
   text-decoration: line-through;
   color: var(--colorCoolGrey);
 }
+
 .not-completed {
   color: var(--colorBlack);
 }
+
 .btn-delete {
-  background-image: url("./icons/delete-red.png");
+  background-image: url("/src/assets/icons/delete-red.png");
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -264,8 +344,9 @@ h3,
   border: none;
   margin: var(--icon-margin);
 }
+
 .btn-edit {
-  background-image: url("./icons/edit-done.png");
+  background-image: url("/src/assets/icons/edit-done.png");
   background-repeat: none;
   background-position: center;
   background-size: cover;
@@ -276,30 +357,29 @@ h3,
 }
 
 .btn-complete {
-  background-image: url("./icons/task_done_green.png");
-  /* background-repeat: none; */
-  /* background-position: center; */
+  background-image: url("/src/assets/icons/task_done_green.png");
+  background-repeat: none;
+  background-position: center;
   background-size: cover;
-  border-radius: 15px;
-  outline: var(--colorWhite) 5px solid;
   width: var(--icon-width);
   height: var(--icon-height);
   border: none;
   margin: var(--icon-margin);
 }
+
 .btn-not-complete {
-  background-image: url("./icons/task-not-completed-red.png");
-  /* background-repeat: none;
-  background-position: center; */
-  border-radius: 15px;
-  outline: var(--colorWhite) 5px solid;
+  background-image: url("/src/assets/icons/task-not-completed-red.png");
+  background-repeat: none;
+  background-position: center;
   background-size: cover;
   width: var(--icon-width);
   height: var(--icon-height);
   border: none;
   margin: var(--icon-margin);
 }
+
 /* --------------------------------------------*/
+
 /* -------------------FOOTER------------------*/
 
 footer {
@@ -324,3 +404,26 @@ footer {
 }
 
 /* Account View */
+</style><style type="text/css">@media screen and (min-width: 1024px) and (max-width: 3000px) {
+  .general-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    align-items: center;
+  }
+  .img {
+    height: 100vh;
+    background-position: -600px;
+  }
+  .container {
+  }
+}
+</style></head>
+  <body>
+    <div id="app" data-v-app=""><div><div class="wrapper"><nav><!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> --><a aria-current="page" href="http://localhost:5175/" class="router-link-active router-link-exact-active"><img src="./ToDo App_files/pfote.jpg" alt=""></a><ul><li><a aria-current="page" href="http://localhost:5175/" class="router-link-active router-link-exact-active link">Task Manager</a></li><li><a href="http://localhost:5175/account" class="link">Your Account</a></li></ul><div><ul class="log-out-welcome"><li><p>Welcome raphaela.prammer@gmail.com</p></li><li><button class="black-button" data-v-7979c4c8=""> Log Out </button><!-- <button @click="signOut" class="button-log-out">Log out</button> --></li></ul></div></nav><div class="content"><h3>Your account:</h3><img src="./ToDo App_files/pfote.jpg" alt=""><a href="http://localhost:5175/account" class="">Go to Account</a></div><div class="new-tasks-container"><h1>Add a new Task</h1><!--v-if--><div class="add-task-container"><div class="input-field"><input type="text" placeholder="Add a Task Title - Go to the Park and Play"></div><div class="input-field"><input type="text" placeholder="Add a Task Description - Bring the ball, cookies and a stick."></div><button class="black-button" data-v-7979c4c8="">Add</button><!-- <button @click="addTask" class="button">Add</button> --></div></div><br><h1>Your Tasks</h1><div class="container-all-tasks"><div class="container-task"><div><div class="top-status" style="
+    display: flex;
+"><div class="btn-complete"></div></div><h3 class="completed">aaaaaaaa</h3><p class="completed">aaaaaaaaaa</p></div><div class="container-buttons"><button class="btn-not-complete"></button><!-- EDIT Button  --><button class="btn-edit"></button><!-- DELETE BUTTON  --><button class="btn-delete"></button><!-- EDIT INPUT FIELDS  --><div class="edit-input-fields" style="display: none;"><input type="text" placeholder="Change Title"><input placeholder="change Description" type="text"><button class="black-button" data-v-7979c4c8="">Save</button><!-- <button class="btn-edit-complete" @click="changeTask">Save</button> --></div></div></div><div class="container-task"><div><div class="top-status"><div class="btn-complete"></div></div><h3 class="completed">noooo</h3><p class="completed">sdlkfjsdl</p></div><div class="container-buttons"><button class="btn-not-complete"></button><!-- EDIT Button  --><button class="btn-edit"></button><!-- DELETE BUTTON  --><button class="btn-delete"></button><!-- EDIT INPUT FIELDS  --><div class="edit-input-fields" style="display: none;"><input type="text" placeholder="Change Title"><input placeholder="change Description" type="text"><button class="black-button" data-v-7979c4c8="">Save</button><!-- <button class="btn-edit-complete" @click="changeTask">Save</button> --></div></div></div><div class="container-task"><div><div class="top-status"><div class="btn-complete"></div></div><h3 class="completed">asdf</h3><p class="completed">jklñ</p></div><div class="container-buttons"><button class="btn-not-complete"></button><!-- EDIT Button  --><button class="btn-edit"></button><!-- DELETE BUTTON  --><button class="btn-delete"></button><!-- EDIT INPUT FIELDS  --><div class="edit-input-fields" style="display: none;"><input type="text" placeholder="Change Title"><input placeholder="change Description" type="text"><button class="black-button" data-v-7979c4c8="">Save</button><!-- <button class="btn-edit-complete" @click="changeTask">Save</button> --></div></div></div></div><footer><div class="footer-image"><img src="./ToDo App_files/pfote.jpg" alt=""></div><h6>Built for Dogs</h6><p>with ♥ from Raphaela Prammer</p></footer></div></div></div>
+    <script type="module" src="./ToDo App_files/main.js.download"></script>
+  
+
+</body></html>

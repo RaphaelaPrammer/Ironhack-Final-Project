@@ -18,7 +18,7 @@
     <div>
       <ul class="log-out-welcome">
         <li>
-          <p>Welcome, {{ userEmail }}</p>
+          <p>Welcome {{ userEmail }}</p>
         </li>
         <li>
           <BlackButton @logOut="signOut"> Log Out </BlackButton>

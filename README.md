@@ -36,11 +36,14 @@
 
 - [x] launch Project to Vercel
 - [x] task completed logic + styling with line-trough
-- [ ] implement Nav Bar and Footer
+- [x] implement Nav Bar and Footer
+- [x] CSS for Add New Task
+
+### 8.12.
+
+- [ ] CSS Home (Task List)
 - [ ] Hamburger Menu
-- [ ] Router Links
-- [ ] CSS for Add New Task
-- [ ] CSS for Task List
+- [ ] Responsive Design for Laptop
 
 ---
 

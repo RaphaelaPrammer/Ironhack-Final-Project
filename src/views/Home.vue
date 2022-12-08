@@ -9,13 +9,16 @@
     </div>
 
     <NewTask @getTasksHijo="getTasks" />
-    <h1>Tasks:</h1>
-    <TaskItem
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-      @getTasksHijo="getTasks"
-    />
+    <br />
+    <h1>Your Tasks</h1>
+    <div class="container-all-tasks">
+      <TaskItem
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+        @getTasksHijo="getTasks"
+      />
+    </div>
     <Footer />
   </div>
 </template>

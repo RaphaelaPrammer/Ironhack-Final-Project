@@ -1,6 +1,11 @@
 <template>
   <div class="container-task">
     <div>
+      <div class="top-status">
+        <div
+          v-bind:class="isComplete ? 'btn-complete' : 'btn-not-complete'"
+        ></div>
+      </div>
       <h3 v-bind:class="isComplete ? 'completed' : 'not-completed'">
         {{ task.title }}
       </h3>
@@ -8,24 +13,32 @@
         {{ task.description }}
       </p>
     </div>
-    <div>
+    <div class="container-buttons">
       <button
         class="btn-not-complete"
         v-if="isComplete"
         @click="changeStatus"
       ></button>
       <button class="btn-complete" v-else @click="changeStatus"></button>
+
+      <!-- EDIT Button  -->
       <button class="btn-edit" @click="changeBooleanFunction"></button>
-      <div v-show="changeBoolean">
+
+      <!-- DELETE BUTTON  -->
+      <button class="btn-delete" @click="deleteTask"></button>
+
+      <!-- EDIT INPUT FIELDS  -->
+
+      <div class="edit-input-fields" v-show="changeBoolean">
         <input type="text" placeholder="Change Title" v-model="name" />
         <input
           placeholder="change Description"
           type="text"
           v-model="description"
         />
-        <button class="btn-edit-complete" @click="changeTask">Save</button>
+        <BlackButton @logOut="changeTask">Save</BlackButton>
+        <!-- <button class="btn-edit-complete" @click="changeTask">Save</button> -->
       </div>
-      <button class="btn-delete" @click="deleteTask"></button>
     </div>
   </div>
 </template>
@@ -34,6 +47,7 @@
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
+import BlackButton from "./BlackButton.vue";
 
 const taskStore = useTaskStore();
 const emit = defineEmits(["getTasksHijo"]);
@@ -79,15 +93,7 @@ const changeStatus = async () => {
 // -->with this approach - change isComplete in the v-bind:class to props.task.is_complete
 </script>
 
-<style>
-.completed {
-  text-decoration: line-through;
-  color: grey;
-}
-.not-completed {
-  color: blue;
-}
-</style>
+<style></style>
 
 <!--
 **Hints**
