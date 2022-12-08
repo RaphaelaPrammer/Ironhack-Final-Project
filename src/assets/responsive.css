@@ -1,31 +1,109 @@
-@media screen and (min-width: 1023px) and (max-width: 3000px) {
-  * {
-    /* font-size: 1.5rem; */
-  }
-  .general-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+@media screen and (min-width: 500px) {
+  .container-all-tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     gap: 20px;
-    width: 100vw;
+    max-width: 70vw;
+  }
+}
+/* @media screen and (min-width: 769px) and (max-width: 1279px) */
+@media screen and (min-width: 769px) {
+  * {
+    font-size: 0.5rem;
+  }
+  .container-all-tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    /* max-width: 70vw; */
+  }
+  /* ---------------------------------------  */
+  /* --------Add Task Section---------------  */
+  .add-task-container {
+    margin-bottom: 20px;
+  }
+  .add-task-container input {
+    width: 50vw;
+    gap: 20px;
+  }
+  /* ---------------------------------------  */
+  /* --------Add Task Section---------------  */
+  .add-task-container {
+    margin-bottom: 20px;
+  }
+  .add-task-container input {
+    width: 50vw;
+    gap: 20px;
+  }
+  /* ---------------------------------------  */
+  /* --------SignIn Sign Up---------------  */
+  /* .general-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    margin: 0 auto 0 auto;
-    background-image: url("./imgs/pfote.jpg");
-    background-repeat: repeat;
-    background-size: 50px;
+    gap: 20px;
+  }*/
+.header-img {
+     width: 60vw;
+    /* background-position: -80px; */
+    border-radius: 100px;
+    height: 50vh;
+    margin: 0 auto;
+  } 
+  .container-sign-in {
+    width: 60vw;
+       height: 50vh;
+    border-radius: 100px;
+    margin: 0 auto;
+  } */
+}
+
+@media screen and (min-width: 1280px) and (max-width: 3000px) {
+  * {
+    font-size: 0.5rem;
+  }
+  /* Nav bar  */
+
+  .btn-hamburger {
+    /* display: none; */
+  }
+  .links {
+    display: block;
   }
 
-  .header-img {
-    height: 50vh;
-    width: 40vw;
-    background-position: -50px;
-    border-radius: 200px;
-    height: 60vh;
+  ul.log-out-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px 0;
+    gap: 5px;
   }
-  .container-sign-in {
-    width: 40vw;
-    height: 60vh;
-    border-radius: 200px;
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+  /* ---------------------------------------  */
+  /* --------Add Task Section---------------  */
+  .add-task-container {
+    margin-bottom: 20px;
+  }
+  .add-task-container input {
+    width: 50vw;
+    gap: 20px;
+  }
+
+  /* ---------------------------------------  */
+  /* --------All Tasks Section---------------  */
+  .container-all-tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
   }
 }

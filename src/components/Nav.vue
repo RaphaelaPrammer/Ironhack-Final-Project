@@ -1,6 +1,39 @@
 <template>
-  <nav class="navbar">
-    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
+  <!-- TEST HAMBURGER -----------------  -->
+  <nav>
+    <div class="navbar">
+      <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
+      <router-link to="/">
+        <img src="../assets/imgs/pfote.jpg" alt="" />
+      </router-link>
+      <button class="btn-hamburger" @click="toggle"></button>
+    </div>
+
+    <div v-show="changeBoolean">
+      <ul class="links">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">Task Manager</router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link class="nav-link" to="/account">Your Account</router-link>
+        </li>
+
+        <div class="container-welcome-logout">
+          <li class="nav-item">
+            <p>Welcome {{ userEmail }}</p>
+          </li>
+          <li class="nav-item">
+            <BlackButton @logOut="signOut"> Log Out </BlackButton>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <!-- Original!! --Hide Router and last button!!-------- -->
+
+  <!-- <nav class="navbar">
+    <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link" />
     <router-link to="/">
       <img src="../assets/imgs/pfote.jpg" alt="" />
     </router-link>
@@ -22,11 +55,11 @@
         </li>
         <li>
           <BlackButton @logOut="signOut"> Log Out </BlackButton>
-          <!-- <button @click="signOut" class="button-log-out">Log out</button> -->
+          <button @click="signOut" class="button-log-out">Log out</button>
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
 </template>
 
 <script setup>
@@ -67,6 +100,17 @@ const signOut = async () => {
   return;
   errorMsg.value = "error";
 };
+
+//HAMBURGER
+const changeBoolean = ref(false);
+const toggle = () => {
+  changeBoolean.value = !changeBoolean.value;
+};
+
+window.addEventListener("resize", () => {});
 </script>
 
-<style></style>
+<style>
+@media screen and (min-width: 1023px) and (max-width: 3000px) {
+} ;
+</style>

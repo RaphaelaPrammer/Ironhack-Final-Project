@@ -41,9 +41,10 @@
 
 ### 8.12.
 
-- [ ] CSS Home (Task List)
+- [x] CSS Home (Task List)
 - [ ] Hamburger Menu
-- [ ] Responsive Design for Laptop
+- [x] Responsive Design SignIn, SignUP
+- [ ] Responsive Design Home
 
 ---
 

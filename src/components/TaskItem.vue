@@ -75,6 +75,8 @@ const changeBooleanFunction = () => {
 const changeTask = async () => {
   await taskStore.changeTask(name.value, description.value, props.task.id);
   changeBoolean.value = false;
+  name.value = "";
+  description.value = "";
   emit("getTasksHijo");
 };
 
