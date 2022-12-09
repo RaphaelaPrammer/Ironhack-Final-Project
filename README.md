@@ -8,6 +8,8 @@
 
 ## Project Description
 
+This project is to build a simple To-do app with Vue.js that allows users to create an account, record tasks, edit them and mark them as complete. The app will be linked to a database, where all the user and task data will be stored. The database that we’ll use for this project is Supabase. We’ll also be using Vite as a build tool to compile our code and provide a development server while we work.
+
 ### Technologies used:
 
 - **Client:** Vue.js y Vite
@@ -45,6 +47,19 @@
 - [ ] Hamburger Menu
 - [x] Responsive Design SignIn, SignUP
 - [ ] Responsive Design Home
+
+### 9.12.
+
+- [ ] finish Hamburger Menu
+- [ ] styling Nav Bar
+- [ ] review Responsive Design
+- [ ] Animations(Buttons, Icons, Cards, something Extra..)
+
+### Backlog:
+
+- [ ] show/hide Password Sign Up
+- [ ] User Profile
+- [ ] connect User Profile pic to account and Home view
 
 ---
 
