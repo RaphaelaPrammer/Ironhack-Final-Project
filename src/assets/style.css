@@ -13,13 +13,11 @@
     0 6px 6px rgba(0, 0, 0, 0.23);
   --box-shadow-imgs: 0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
-  --icon-width: 25px;
-  --icon-height: 25px;
-  --icon-margin: 5px;
-  /* --fontSize-sm: 16px;
-  --fontFamily: "Arial, Helvetica, sans-serif";
-  --fontTitle: "Arial";
-  --fontBody: "Helvetica"; */
+  --box-shadow-top-bottom: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+    0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+  --icon-width: 30px;
+  --icon-height: 30px;
+  --icon-margin: 7px;
 }
 
 * {
@@ -29,12 +27,20 @@
   font-size: 10px;
 }
 
-/* SignIn Component */
+#app {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/*----------- SignIn Component -------------------------*/
 .general-container {
   display: flex;
   flex-direction: column;
   /* gap: 5px; */
-  background-image: url("./imgs/pfote.jpg");
+  /* background-image: url("./imgs/pfote.jpg"); */
   background-repeat: repeat;
   background-size: 50px;
 }
@@ -42,9 +48,9 @@
   width: 50px;
 }
 .header-img {
-  background-image: url("https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg");
+  background-image: url("../assets/imgs/header-dogs-4.jpg");
   height: 40vh;
-  /* box-shadow: var(--box-shadow-imgs); */
+  box-shadow: var(--box-shadow-top-bottom);
   border-radius: 200px 200px 0 0;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,15 +105,14 @@
 
 /* --------------Home view-------------------- */
 .wrapper {
-  background-color: var(--colorLightGrey);
-  height: auto;
+  height: 100vh;
 }
 
 /* ---------------NAV-BAR--------------- */
 nav img {
   width: 40px;
-  box-shadow: var(--box-shadow-imgs);
   margin: 10px;
+  border-radius: 0;
 }
 
 .navbar {
@@ -115,27 +120,15 @@ nav img {
   border-radius: 0px 0px 20px 20px;
   width: 100vw;
   height: 70px;
-  box-shadow: var(--box-shadow-imgs);
+  box-shadow: var(--box-shadow-top-bottom);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 0 10px 0;
 }
-.nav-menu {
-  display: flex;
-  flex-direction: column;
-}
-nav ul {
-  display: none;
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-}
 
 .links {
-  /* display: none; */
+  list-style: none;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -143,36 +136,51 @@ nav ul {
   padding: 10px;
   border-radius: 20px;
   box-shadow: var(--box-shadow-small);
-  gap: 5px;
+  gap: 7px;
   /* position: relative;
   top: 00px; */
   background-color: var(--colorPastelPink);
+  background-image: url("./imgs/header-dogs-4-short.jpg");
+  background-size: 1300px;
+  /* background-position-y: 0%; */
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+}
+.links p,
+.links a {
+  font-size: 1.3rem;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+
+  background: white;
+}
+.links a:hover {
+  color: var(--colorMnBlue);
 }
 .container-welcome-logout {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
+  gap: 5px;
 }
 .btn-hamburger {
-  background-image: url("./icons/Hot-dog3.png");
-  box-shadow: var(--box-shadow-imgs);
+  background-image: url("./icons/hot-dog.png");
   background-position: bottom;
   background-repeat: none;
   background-size: contain;
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 40px;
+  border-radius: 40%;
   margin: 10px;
 }
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: black;
+.btn-hamburger:hover {
+  transform: rotate(90deg);
+}
+.nav-big-screen {
+  display: none;
 }
 
 /* ---------YOUR ACCOUNT-------------*/
@@ -203,6 +211,7 @@ h1 {
   text-align: center;
 }
 .add-task-container input {
+  background-color: var(--colorLightGrey);
   width: 80vw;
   height: 40px;
   border: none;
@@ -215,15 +224,15 @@ h1 {
 .container-all-tasks {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   /* gap: 50x; */
   width: 90vw;
-  margin: 0 auto 0 auto;
+  padding-bottom: 50px;
+  margin: 0 auto 0px auto;
 }
 .container-task {
-  background: var(--colorWhite);
+  background-color: var(--colorLightGrey);
   border-radius: 30px 5px;
   box-shadow: var(--box-shadow-small);
   display: flex;
@@ -236,6 +245,11 @@ h1 {
   align-items: center;
   margin: 20px auto 20px auto;
   /* padding: 10px; */
+}
+.container-task:hover {
+  -webkit-box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
+  -moz-box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
+  box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
 }
 .top-status {
   display: flex;
@@ -268,50 +282,50 @@ h3,
 }
 .completed {
   text-decoration: line-through;
-  color: var(--colorCoolGrey);
+  color: var(--colorMnBlue);
 }
 .not-completed {
   color: var(--colorBlack);
 }
 .btn-delete {
-  background-image: url("./icons/delete-red.png");
-  background-repeat: none;
+  background-image: url("./icons/dog-poo-1.png");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   width: var(--icon-width);
   height: var(--icon-height);
+  border-radius: 30%;
   border: none;
   margin: var(--icon-margin);
 }
 .btn-edit {
-  background-image: url("./icons/edit-done.png");
+  background-image: url("./icons/dog-edit-2.png");
   background-repeat: none;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   width: var(--icon-width);
   height: var(--icon-height);
+  border-radius: 30%;
   border: none;
   margin: var(--icon-margin);
 }
 
 .btn-complete {
-  background-image: url("./icons/task_done_green.png");
-  /* background-repeat: none; */
+  /* background-image: url("./icons/task_done_green.png"); */
   /* background-position: center; */
+  background-image: url("./icons/dog-happy-2.png");
   background-size: cover;
-  border-radius: 15px;
-  outline: var(--colorWhite) 5px solid;
+  /* border-radius: 30%; */
+  /* outline: var(--colorWhite) 5px solid; */
   width: var(--icon-width);
   height: var(--icon-height);
   border: none;
   margin: var(--icon-margin);
 }
 .btn-not-complete {
-  background-image: url("./icons/task-not-completed-red.png");
-  /* background-repeat: none;
-  background-position: center; */
-  border-radius: 15px;
-  outline: var(--colorWhite) 5px solid;
+  /* background-image: url("./icons/task-not-completed-red.png"); */
+  background-image: url("./icons/dog-not-happy.png");
+  border-radius: 30%;
+  /* outline: var(--colorWhite) 5px solid; */
   background-size: cover;
   width: var(--icon-width);
   height: var(--icon-height);
@@ -323,16 +337,17 @@ h3,
 
 footer {
   width: 100vw;
-  height: 20px;
+  /* height: 20px; */
   position: fixed;
   bottom: 0;
   background-color: var(--colorPastelPink);
-  box-shadow: var(--box-shadow-imgs);
+  box-shadow: var(--box-shadow-top);
   padding: 10px 0;
   border-radius: 20px 20px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-top: 20px;
   /* text-align: center; */
@@ -341,5 +356,10 @@ footer {
 .footer-image img {
   width: 20px;
 }
-
+footer p {
+  font-size: 1rem;
+}
+footer h6 {
+  font-size: 1.2rem;
+}
 /* Account View */

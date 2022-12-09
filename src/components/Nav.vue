@@ -4,12 +4,24 @@
     <div class="navbar">
       <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
       <router-link to="/">
-        <img src="../assets/imgs/pfote.jpg" alt="" />
+        <img src="../assets/icons/home-icon.png" alt="" />
       </router-link>
       <button class="btn-hamburger" @click="toggle"></button>
-    </div>
 
-    <div v-show="changeBoolean">
+      <!-- Menu for Desktop screen width:  -->
+      <div class="nav-big-screen">
+        <router-link to="/">Task Manager</router-link>
+        <router-link to="/account">Your Account</router-link>
+
+        <div class="container-welcome-logout-big-screen">
+          <p>Welcome {{ userEmail }}</p>
+
+          <BlackButton @logOut="signOut"> Log Out </BlackButton>
+        </div>
+      </div>
+    </div>
+    <!-- Menu for small screen width:  -->
+    <div class="nav-small-screen" v-show="changeBoolean">
       <ul class="links">
         <li class="nav-item">
           <router-link class="nav-link" to="/">Task Manager</router-link>

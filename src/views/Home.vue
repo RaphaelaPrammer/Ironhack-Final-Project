@@ -1,23 +1,24 @@
 <template>
-  <div class="wrapper">
+  <div>
     <Nav />
+    <div class="wrapper">
+      <div class="content">
+        <h3>Your account:</h3>
+        <img src="../assets/imgs/pfote.jpg" alt="" />
+        <router-link to="/account">Go to Account</router-link>
+      </div>
 
-    <div class="content">
-      <h3>Your account:</h3>
-      <img src="../assets/imgs/pfote.jpg" alt="" />
-      <router-link to="/account">Go to Account</router-link>
-    </div>
-
-    <NewTask @getTasksHijo="getTasks" />
-    <br />
-    <h1>Your Tasks</h1>
-    <div class="container-all-tasks">
-      <TaskItem
-        v-for="task in tasks"
-        :key="task.id"
-        :task="task"
-        @getTasksHijo="getTasks"
-      />
+      <NewTask @getTasksHijo="getTasks" />
+      <br />
+      <h1>Your Tasks</h1>
+      <div class="container-all-tasks">
+        <TaskItem
+          v-for="task in tasks"
+          :key="task.id"
+          :task="task"
+          @getTasksHijo="getTasks"
+        />
+      </div>
     </div>
     <Footer />
   </div>
@@ -40,6 +41,9 @@ const tasks = ref([]);
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
+  //Sort
+  tasks.value = tasks.value.sort((a, b) => (a.inserted_at ? -1 : 1));
+  tasks.value = tasks.value.sort((a, b) => (a.is_complete ? 1 : -1));
 };
 
 getTasks();

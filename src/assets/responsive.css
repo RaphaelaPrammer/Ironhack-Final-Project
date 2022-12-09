@@ -1,3 +1,4 @@
+/* ----------------btw 500px and 769px------------------------ */
 @media screen and (min-width: 500px) {
   .container-all-tasks {
     display: grid;
@@ -7,10 +8,11 @@
     max-width: 70vw;
   }
 }
+/* ----------------btw 769 and 1279 px------------------------ */
 /* @media screen and (min-width: 769px) and (max-width: 1279px) */
 @media screen and (min-width: 769px) {
   * {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
   .container-all-tasks {
     display: grid;
@@ -37,57 +39,56 @@
     width: 50vw;
     gap: 20px;
   }
+}
+/* ----------------btw 1280 and 3000 px------------------------ */
+@media screen and (min-width: 1280px) and (max-width: 3000px) {
+  * {
+    font-size: 0.8rem;
+  }
+  /* Nav bar  */
+
+  .btn-hamburger,
+  .nav-small-screen {
+    display: none;
+  }
+  .nav-big-screen {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-big-screen a,
+  .nav-big-screen p {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+  }
+  .nav-big-screen a:hover {
+    cursor: pointer;
+    color: var(--colorMnBlue);
+  }
+  .container-welcome-logout-big-screen {
+    text-align: end;
+    margin-right: 20px;
+  }
   /* ---------------------------------------  */
   /* --------SignIn Sign Up---------------  */
-  /* .general-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    gap: 20px;
-  }*/
-.header-img {
-     width: 60vw;
+
+  .header-img {
+    width: 60vw;
     /* background-position: -80px; */
     border-radius: 100px;
     height: 50vh;
     margin: 0 auto;
-  } 
+  }
   .container-sign-in {
     width: 60vw;
-       height: 50vh;
+    height: 50vh;
     border-radius: 100px;
     margin: 0 auto;
-  } */
-}
-
-@media screen and (min-width: 1280px) and (max-width: 3000px) {
-  * {
-    font-size: 0.5rem;
-  }
-  /* Nav bar  */
-
-  .btn-hamburger {
-    /* display: none; */
-  }
-  .links {
-    display: block;
   }
 
-  ul.log-out-welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin: 10px 0;
-    gap: 5px;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-  }
   /* ---------------------------------------  */
   /* --------Add Task Section---------------  */
   .add-task-container {
@@ -105,5 +106,13 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 20px;
+  }
+
+  /* ---------------------------------------  */
+  /* --------Footer---------------  */
+  footer {
+    flex-direction: column;
+    height: 60px;
+    gap: 0px;
   }
 }

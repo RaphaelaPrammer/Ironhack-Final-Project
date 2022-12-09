@@ -7,10 +7,7 @@
       <div class="header">
         <div class="header-description">
           <div class="header-logo">
-            <img
-              src="https://media.istockphoto.com/id/1188848722/es/vector/icono-de-impresi%C3%B3n-de-pata-de-animal-impresi%C3%B3n-de-pata-de-perro-o-gato.jpg?s=612x612&w=0&k=20&c=SuPNtRgRFp8quBl2tSqB7Ddg1nvPcW1JkduXWI0LnwA="
-              alt="header-img"
-            />
+            <img src="../assets/imgs/pfote.jpg" alt="header-img" />
           </div>
           <h3 class="header-title">Log In to ToDoG App</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
