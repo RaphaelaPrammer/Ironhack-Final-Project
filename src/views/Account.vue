@@ -1,7 +1,12 @@
 <template>
   <Nav />
-  <h1>Name: {{ userStore.profile.username }}</h1>
+
+  <h1>hello {{ yourname }}</h1>
+
+  <h2>Your Account:</h2>
+  <!-- <h2>User Name: {{ userStore.profile.username }}</h2> -->
   <h2>Email: {{ userStore.user.email }}</h2>
+  <h2>Your Website: {{ website }}</h2>
 
   <img
     :src="
@@ -11,21 +16,22 @@
     "
     alt="Profile picture"
   />
+
   <h2>Edit your Profile</h2>
-  <div>
+  <!-- <div>
     <label for="username">Username</label>
     <input id="username" type="text" v-model="username" />
-  </div>
+  </div> -->
   <div>
-    <label for="fullname">Full Name</label>
-    <input id="fullname" type="text" v-model="fullname" />
+    <label for="yourname">Your Name</label>
+    <input id="yourname" type="text" v-model="yourname" />
   </div>
   <div>
     <label for="website">Website</label>
     <input id="website" type="website" v-model="website" />
   </div>
 
-  <BlackButton @logOut="updateProfile">Edit Profile</BlackButton>
+  <BlackButton @logOut="updateProfile">Update Profile</BlackButton>
   <br />
   <BlackButton @logOut="signOut">Log Out</BlackButton>
 </template>
@@ -39,11 +45,12 @@ import BlackButton from "../components/BlackButton.vue";
 
 const userStore = useUserStore();
 
-const username = ref("");
-const fullname = ref("");
-const avatar_url = ref("");
-const website = ref("");
+// const username = ref("");
+const yourname = ref(null);
+const avatar_url = ref(null);
+const website = ref(null);
 const loading = ref(false);
+let email = ref(null);
 
 onMounted(() => {
   getProfile();
@@ -51,8 +58,10 @@ onMounted(() => {
 
 async function getProfile() {
   await userStore.fetchUser();
-  username.value = userStore.profile.username;
+  yourname.value = userStore.profile.yourname;
   avatar_url.value = userStore.profile.avatar_url;
+  website.value = userStore.profile.website;
+  email = userStore.user.email;
 }
 
 async function signOut() {
@@ -74,8 +83,7 @@ async function updateProfile() {
     let { data, error } = await supabase
       .from("profiles")
       .update({
-        username: username.value,
-        fullname: fullname.value,
+        yourname: yourname.value,
         website: website.value,
         avatar_url: avatar_url.value,
         updated_at: new Date(),
