@@ -28,7 +28,7 @@
 }
 
 #app {
-  min-height: 100vh;
+  min-height: auto;
   min-width: 100vw;
 }
 button:hover {
@@ -152,12 +152,12 @@ nav img {
 
   font-weight: bold;
   text-decoration: none;
-  color: black;
+  color: var(--colorMnBlue);
 
   background: white;
 }
 .links a:hover {
-  color: var(--colorMnBlue);
+  color: var(--colorPastelPink);
 }
 .container-welcome-logout {
   display: flex;

@@ -65,7 +65,8 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 - [ ] Animations
   - [ ] delete Card
   - [ ] add Task with slide
-- [ ] implement Categories
+- [ ] implement Categories ans show the Tasks in a list of categories
+- [ ] Slide de Tasks
 - [ ] implement SubTasks
 
 ---

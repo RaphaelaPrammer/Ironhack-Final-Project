@@ -118,11 +118,6 @@ const changeBoolean = ref(false);
 const toggle = () => {
   changeBoolean.value = !changeBoolean.value;
 };
-
-window.addEventListener("resize", () => {});
 </script>
 
-<style>
-@media screen and (min-width: 1023px) and (max-width: 3000px) {
-} ;
-</style>
+<style></style>

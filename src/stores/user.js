@@ -10,14 +10,16 @@ export const useUserStore = defineStore("user", {
       const user = await supabase.auth.user();
       if (user) {
         this.user = user;
-        // const { data: profile } = await supabase
-        // .from('profiles')
-        // .select()
-        // .match({ user_id: this.user.id })
+        //COMMENTED:
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select()
+          .match({ user_id: this.user.id });
 
-        // if (profile) this.profile = profile[0];
-        // console.log('user in store: ', this.user);
-        // console.log('profile in store: ', this.profile);
+        if (profile) this.profile = profile[0];
+        // console.log("user in store: ", this.user);
+        // console.log("profile in store: ", this.profile);
+        //COMMENTED
       }
     },
 
@@ -29,14 +31,16 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        // console.log(this.user);
+        //COMMENTED:
+        console.log(this.user);
 
-        // const { data: profile } = await supabase.from('profiles').insert([
-        //   {
-        //     user_id: this.user.id,
-        //     username: email
-        //   }
-        // ])
+        const { data: profile } = await supabase.from("profiles").insert([
+          {
+            user_id: this.user.id,
+            username: email,
+          },
+        ]);
+        //COMMENTED:
       }
     },
 
@@ -54,13 +58,15 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) {
         this.user = user;
-        // const { data: profile } = await supabase
-        // .from('profiles')
-        // .select()
-        // .match({ user_id: this.user.id })
+        //commented:
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select()
+          .match({ user_id: this.user.id });
 
-        // if (profile) this.profile = profile[0];
-        // console.log('profile in store: ', profile);
+        if (profile) this.profile = profile[0];
+        console.log("profile in store: ", profile);
+        //Commented
       }
     },
 

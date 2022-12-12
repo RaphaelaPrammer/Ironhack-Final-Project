@@ -1,5 +1,5 @@
-/* ----------------btw 500px and 769px------------------------ */
-@media screen and (min-width: 500px) {
+/* ----------------btw 567px and 769px------------------------ */
+@media screen and (min-width: 567px) {
   .container-all-tasks {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -63,6 +63,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     color: black;
+    font-weight: bold;
   }
   .nav-big-screen a:hover {
     cursor: pointer;
