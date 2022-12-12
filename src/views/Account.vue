@@ -1,39 +1,55 @@
 <template>
   <Nav />
 
-  <h1>hello {{ yourname }}</h1>
+  <h1>Hello {{ yourname }} !</h1>
 
   <h2>Your Account:</h2>
   <!-- <h2>User Name: {{ userStore.profile.username }}</h2> -->
-  <h2>Email: {{ userStore.user.email }}</h2>
-  <h2>Your Website: {{ website }}</h2>
 
-  <img
-    :src="
-      avatar_url
-        ? avatar_url
-        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-    "
-    alt="Profile picture"
-  />
-
-  <h2>Edit your Profile</h2>
-  <!-- <div>
+  <div class="container-account">
+    <img
+      :src="
+        avatar_url
+          ? avatar_url
+          : 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/300px-WelshCorgi.jpeg'
+      "
+      alt="Profile picture"
+      class="account-avatar-img"
+    />
+    <div>
+      <h4>
+        <img src="../assets/icons/scoobydoo.png" alt="" />{{
+          userStore.user.email
+        }}
+      </h4>
+      <h4><img src="../assets/icons/dog-robot.png" alt="" />{{ website }}</h4>
+      <br />
+      <BlackButton @logOut="signOut">Log Out</BlackButton>
+    </div>
+    <div>
+      <BlackButton @click="changeBoolean">Edit Profile</BlackButton>
+      <div v-show="boolean">
+        <!-- <div>
     <label for="username">Username</label>
-    <input id="username" type="text" v-model="username" />
+    <input id="username" type="text" v-model.lazy="username" />
   </div> -->
-  <div>
-    <label for="yourname">Your Name</label>
-    <input id="yourname" type="text" v-model="yourname" />
-  </div>
-  <div>
-    <label for="website">Website</label>
-    <input id="website" type="website" v-model="website" />
-  </div>
+        <div class="edit-profile-container">
+          <div>
+            <label for="yourname">Your Name</label><br />
+            <input id="yourname" type="text" v-model.lazy="yourname" />
+          </div>
 
-  <BlackButton @logOut="updateProfile">Update Profile</BlackButton>
-  <br />
-  <BlackButton @logOut="signOut">Log Out</BlackButton>
+          <div>
+            <label for="website">Website</label><br />
+            <input id="website" type="website" v-model.lazy="website" />
+          </div>
+
+          <div><label for="avatar">Update Profile Pic</label><br /></div>
+        </div>
+        <BlackButton @logOut="updateProfile">Update </BlackButton>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -89,7 +105,9 @@ async function updateProfile() {
         updated_at: new Date(),
       })
       .match({ user_id: userStore.user.id });
+
     getProfile();
+
     if (error) throw error;
   } catch (error) {
     alert(error.message);
@@ -97,11 +115,16 @@ async function updateProfile() {
     loading.value = false;
   }
 }
+
+//Toggle Boolean to open Edit Inputs
+const boolean = ref(false);
+const changeBoolean = () => {
+  boolean.value = !boolean.value;
+};
 </script>
 
 <style>
-img {
-  width: 200px;
-  border-radius: 50%;
+h4 img {
+  width: 20px;
 }
 </style>

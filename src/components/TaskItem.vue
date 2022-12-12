@@ -69,11 +69,14 @@ import BlackButton from "./BlackButton.vue";
 
 const taskStore = useTaskStore();
 const emit = defineEmits(["getTasksHijo"]);
-const name = ref("");
-const description = ref("");
+
+const name = ref(props.task.title);
+const description = ref(props.task.description);
+
 const props = defineProps({
   task: Object,
 });
+
 //-----------------------------------------------------
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 
@@ -100,17 +103,11 @@ const changeTask = async () => {
 // Function for Completion Tasks----------
 
 const isComplete = ref(false);
-// const changeStatus = async () => {
-//   await taskStore.changeStatus(props.task.id, isComplete.value);
-//   isComplete.value = !isComplete.value;
-//   emit("getTasksHijo");
-// };
-// Other Way!!
+
 const changeStatus = async () => {
   await taskStore.changeStatus(props.task.id, !props.task.is_complete);
   emit("getTasksHijo");
 };
-// -->with this approach - change isComplete in the v-bind:class to props.task.is_complete
 </script>
 
 <style></style>
