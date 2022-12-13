@@ -1,5 +1,17 @@
 <template>
-  <div class="container-task">
+  <div
+    class="container-task"
+    v-bind:class="[
+      props.task.is_complete ? 'task-complete' : 'task-not-complete',
+      // props.task.category === 'family'
+      //   ? 'task-family'
+      //   : props.task.category === 'business'
+      //   ? 'task-business'
+      //   : props.task.category === 'leisure'
+      //   ? 'task-leisure'
+      //   : 'task-other',
+    ]"
+  >
     <div>
       <div class="top-status">
         <div
@@ -7,11 +19,26 @@
             props.task.is_complete ? 'btn-complete' : 'btn-not-complete'
           "
         ></div>
+        <h5
+          class="top-category"
+          :class="
+            props.task.category === 'family'
+              ? 'task-family'
+              : props.task.category === 'business'
+              ? 'task-business'
+              : props.task.category === 'leisure'
+              ? 'task-leisure'
+              : 'task-other'
+          "
+        >
+          {{ task.category }}
+        </h5>
       </div>
-      <h3 v-bind:class="props.task.is_complete ? 'completed' : 'not-completed'">
+
+      <h3>
         {{ task.title }}
       </h3>
-      <p v-bind:class="props.task.is_complete ? 'completed' : 'not-completed'">
+      <p>
         {{ task.description }}
       </p>
     </div>
@@ -21,7 +48,7 @@
       <button
         title="Task not completed"
         class="btn-not-complete"
-        v-if="isComplete"
+        v-if="props.task.is_complete"
         @click="changeStatus"
       ></button>
       <button
@@ -72,6 +99,7 @@ const emit = defineEmits(["getTasksHijo"]);
 
 const name = ref(props.task.title);
 const description = ref(props.task.description);
+const category = ref(props.task.category);
 
 const props = defineProps({
   task: Object,
@@ -102,15 +130,33 @@ const changeTask = async () => {
 //------------------------------------------------------------
 // Function for Completion Tasks----------
 
-const isComplete = ref(false);
-
 const changeStatus = async () => {
   await taskStore.changeStatus(props.task.id, !props.task.is_complete);
+
   emit("getTasksHijo");
 };
 </script>
 
-<style></style>
+<style scoped>
+.top-category {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.task-family {
+  background: #7a4b94b0;
+}
+.task-business {
+  background: #7d82b8c2;
+}
+.task-leisure {
+  background: #b7e3ccb6;
+}
+.task-other {
+  background: #ffcf56ab;
+}
+</style>
 
 <!--
 **Hints**

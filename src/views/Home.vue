@@ -2,6 +2,7 @@
   <div>
     <Nav />
     <div class="wrapper">
+      <h2>Welcome to ToDog App</h2>
       <div class="account">
         <h3>Your account:</h3>
         <div class="account-grid">
@@ -23,6 +24,7 @@
           :task="task"
           @getTasksHijo="getTasks"
         />
+        <h1>Completed Tasks</h1>
       </div>
     </div>
     <Footer />

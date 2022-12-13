@@ -77,7 +77,7 @@ async function getProfile() {
   yourname.value = userStore.profile.yourname;
   avatar_url.value = userStore.profile.avatar_url;
   website.value = userStore.profile.website;
-  email = userStore.user.email;
+  email.value = userStore.user.email;
 }
 
 async function signOut() {

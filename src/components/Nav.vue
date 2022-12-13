@@ -93,7 +93,7 @@ const getProfile = useUserStore().profile;
 
 // constant that calls user email from the useUSerStore
 const userEmail = getUser.email;
-const userYourName = getProfile.yourname;
+// const userYourName = getProfile.yourname;
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
