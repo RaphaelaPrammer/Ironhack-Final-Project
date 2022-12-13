@@ -4,27 +4,33 @@
     <div class="wrapper">
       <h2>Welcome to ToDog App</h2>
       <div class="account">
-        <h3>Your account:</h3>
+        <h3>Welcome {{ yourname }}!</h3>
         <div class="account-grid">
-          <!-- <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/300px-WelshCorgi.jpeg"
-            alt=""
-          /> -->
+          <img src="{{avatar_url}}" alt="" />
+
           <router-link to="/account">Go to Account</router-link>
         </div>
       </div>
 
       <NewTask @getTasksHijo="getTasks" />
       <br />
-      <h1>Your Tasks</h1>
+      <h1>Open Tasks</h1>
       <div class="container-all-tasks">
         <TaskItem
-          v-for="task in tasks"
+          v-for="task in tasksNotCompleted"
           :key="task.id"
           :task="task"
           @getTasksHijo="getTasks"
         />
-        <h1>Completed Tasks</h1>
+      </div>
+      <h1>Completed Tasks</h1>
+      <div class="container-all-tasks">
+        <TaskItem
+          v-for="task in tasksCompleted"
+          :key="task.id"
+          :task="task"
+          @getTasksHijo="getTasks"
+        />
       </div>
     </div>
     <Footer />
@@ -32,28 +38,48 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
 import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
+import { useUserStore } from "../stores/user";
+import { isTemplateNode } from "@vue/compiler-core";
 
 const taskStore = useTaskStore();
 
 // Variable para guardar las tareas de supabase
 const tasks = ref([]);
+const tasksCompleted = ref([]);
+const tasksNotCompleted = ref([]);
 
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
   tasks.value = await taskStore.fetchTasks();
+
   //Sort
   tasks.value = tasks.value.sort((a, b) => (a.inserted_at ? -1 : 1));
   tasks.value = tasks.value.sort((a, b) => (a.is_complete ? 1 : -1));
-};
 
+  //COMPLETION:
+  tasksCompleted.value = tasks.value.filter((i) => i.is_complete);
+  tasksNotCompleted.value = tasks.value.filter((i) => i.is_complete === false);
+};
 getTasks();
+
+//FOR AVATAR PIC ??????????????????????????????
+const userStore = useUserStore();
+const avatar_url = ref(null);
+const yourname = ref(null);
+const getProfile = async () => {
+  await userStore.fetchUser();
+  avatar_url.value = userStore.profile.avatar_url;
+  yourname.value = userStore.profile.yourname;
+  // console.log(avatar_url.value);
+};
+getProfile();
 </script>
 
 <style></style>

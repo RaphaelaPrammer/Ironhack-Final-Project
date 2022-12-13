@@ -14,7 +14,7 @@
         <router-link to="/account">Your Account</router-link>
 
         <div class="container-welcome-logout-big-screen">
-          <p>Welcome {{ userEmail }}</p>
+          <p>Welcome {{ getUser.email }}</p>
 
           <BlackButton @logOut="signOut"> Log Out </BlackButton>
         </div>
@@ -33,7 +33,7 @@
 
         <div class="container-welcome-logout">
           <li class="nav-item">
-            <p>Welcome {{ userEmail }}</p>
+            <p>Welcome {{ getUser.email }}</p>
           </li>
           <li class="nav-item">
             <BlackButton @logOut="signOut"> Log Out </BlackButton>
@@ -87,13 +87,8 @@ const route = "/";
 const buttonText = "Todo app";
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
-// const getUser = computed(() => useUserStore().user);
-const getUser = useUserStore().user;
-const getProfile = useUserStore().profile;
-
-// constant that calls user email from the useUSerStore
-const userEmail = getUser.email;
-// const userYourName = getProfile.yourname;
+const getUser = computed(() => useUserStore().user);
+const getProfile = computed(() => useUserStore().profile);
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();

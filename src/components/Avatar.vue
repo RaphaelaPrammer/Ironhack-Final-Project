@@ -9,8 +9,8 @@
     />
     <div
       v-else
-      class="avatar no-image account-avatar-img"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/300px-WelshCorgi.jpeg"
+      class="account-avatar-no-img"
+      src=""
       :style="{ height: size + 'em', width: size + 'em' }"
     />
 

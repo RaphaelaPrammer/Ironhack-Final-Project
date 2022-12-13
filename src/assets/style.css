@@ -406,10 +406,18 @@ footer h6 {
   border-radius: 50%;
   box-shadow: var(--box-shadow-small);
 }
+.account-avatar-no-img {
+  background-image: url("../assets/imgs/avatar-default.png");
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow-small);
+}
 
 h1 {
   font-size: 2.8rem;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 h2 {
   font-size: 1.5rem;

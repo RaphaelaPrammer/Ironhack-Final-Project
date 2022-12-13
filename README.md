@@ -60,16 +60,19 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 
 ### 13.12.
 
-- [ ] connect User Profile pic to account and Home view
-- [ ] show/hide Password Sign Up/Sign In
-- [ ] Solve error 500 with Sign up
+- [x] connect User Profile pic to account
+- [x] show Tasks in two lists - unfinished/finished
+- [x] Solve error 500 with Sign up
+- [x] implement Categories
 
 ### Backlog:
 
+- [ ] connect User Profile pic to HOME VIEW
+- [ ] show/hide Password Sign Up/Sign In
 - [ ] Animations
   - [ ] delete Card
   - [ ] add Task with slide
-- [ ] implement Categories ans show the Tasks in a list of categories
+- [ ] show the Tasks in a list of categories
 - [ ] Slide de Tasks
 - [ ] implement SubTasks
 

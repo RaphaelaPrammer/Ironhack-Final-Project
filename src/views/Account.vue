@@ -17,7 +17,7 @@
       </h4>
       <h4><img src="../assets/icons/dog-robot.png" alt="" />{{ website }}</h4>
       <br />
-      <BlackButton @logOut="signOut">Log Out</BlackButton>
+      <BlackButton @click="signOut">Log Out</BlackButton>
     </div>
     <div>
       <BlackButton @click="changeBoolean">Edit Profile</BlackButton>
@@ -50,6 +50,7 @@ import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import BlackButton from "../components/BlackButton.vue";
 import Avatar from "../components/Avatar.vue";
+import { useRouter } from "vue-router";
 
 const userStore = useUserStore();
 
@@ -72,17 +73,35 @@ async function getProfile() {
   email.value = userStore.user.email;
 }
 
-async function signOut() {
+// async function signOut() {
+//   try {
+//     loading.value = true;
+//     let { error } = await supabase.auth.signOut();
+//     if (error) throw error;
+//   } catch (error) {
+//     alert(error.message);
+//   } finally {
+//     loading.value = false;
+//   }
+// }
+
+// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
+const redirect = useRouter();
+const signOut = async () => {
   try {
-    loading.value = true;
-    let { error } = await supabase.auth.signOut();
-    if (error) throw error;
+    // call the user store and send the users info to backend to signOut
+    await useUserStore().signOut();
+    // then redirect user to the homeView
+    redirect.push({ path: "/auth/login" });
   } catch (error) {
-    alert(error.message);
-  } finally {
-    loading.value = false;
+    errorMsg.value = error.message;
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 5000);
   }
-}
+  return;
+  errorMsg.value = "error";
+};
 
 async function updateProfile() {
   try {
@@ -106,6 +125,7 @@ async function updateProfile() {
   } finally {
     loading.value = false;
   }
+  boolean.value = false;
 }
 
 //Toggle Boolean to open Edit Inputs

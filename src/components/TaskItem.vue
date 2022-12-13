@@ -3,13 +3,6 @@
     class="container-task"
     v-bind:class="[
       props.task.is_complete ? 'task-complete' : 'task-not-complete',
-      // props.task.category === 'family'
-      //   ? 'task-family'
-      //   : props.task.category === 'business'
-      //   ? 'task-business'
-      //   : props.task.category === 'leisure'
-      //   ? 'task-leisure'
-      //   : 'task-other',
     ]"
   >
     <div>
