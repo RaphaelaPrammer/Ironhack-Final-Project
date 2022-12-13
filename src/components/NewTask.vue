@@ -123,18 +123,17 @@ const addTask = async () => {
   border-radius: 10px;
   padding: 5px;
   font-weight: bold;
-  align-self: center;
 }
 .family {
   background: #7a4b94b0;
 }
 .business {
-  background: #7d82b8;
+  background: #7d82b8c2;
 }
 .leisure {
-  background: #b7e3cc;
+  background: #b7e3ccb6;
 }
 .other {
-  background: #ffcf56;
+  background: #ffcf56ce;
 }
 </style>

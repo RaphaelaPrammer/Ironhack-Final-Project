@@ -14,7 +14,7 @@
         <router-link to="/account">Your Account</router-link>
 
         <div class="container-welcome-logout-big-screen">
-          <p>Welcome {{ userYourName }}</p>
+          <p>Welcome {{ userEmail }}</p>
 
           <BlackButton @logOut="signOut"> Log Out </BlackButton>
         </div>
@@ -33,7 +33,7 @@
 
         <div class="container-welcome-logout">
           <li class="nav-item">
-            <p>Welcome {{ userYourName }}</p>
+            <p>Welcome {{ userEmail }}</p>
           </li>
           <li class="nav-item">
             <BlackButton @logOut="signOut"> Log Out </BlackButton>

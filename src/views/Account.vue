@@ -2,20 +2,13 @@
   <Nav />
 
   <h1>Hello {{ yourname }} !</h1>
+  <!-- <h1>Hello {{ userStore.profile.yourname }} !</h1> -->
 
   <h2>Your Account:</h2>
   <!-- <h2>User Name: {{ userStore.profile.username }}</h2> -->
 
   <div class="container-account">
-    <img
-      :src="
-        avatar_url
-          ? avatar_url
-          : 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/300px-WelshCorgi.jpeg'
-      "
-      alt="Profile picture"
-      class="account-avatar-img"
-    />
+    <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
     <div>
       <h4>
         <img src="../assets/icons/scoobydoo.png" alt="" />{{
@@ -43,8 +36,6 @@
             <label for="website">Website</label><br />
             <input id="website" type="website" v-model.lazy="website" />
           </div>
-
-          <div><label for="avatar">Update Profile Pic</label><br /></div>
         </div>
         <BlackButton @logOut="updateProfile">Update </BlackButton>
       </div>
@@ -58,6 +49,7 @@ import { onMounted, ref, toRefs } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import BlackButton from "../components/BlackButton.vue";
+import Avatar from "../components/Avatar.vue";
 
 const userStore = useUserStore();
 

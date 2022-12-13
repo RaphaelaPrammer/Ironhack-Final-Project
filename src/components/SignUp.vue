@@ -60,7 +60,9 @@
         </div>
       </form>
 
-      <div v-show="errorMsg">{{ errorMsg }}</div>
+      <div class="error" v-show="errorMsg">
+        <h5>{{ errorMsg }}</h5>
+      </div>
     </div>
   </div>
 </template>
@@ -111,8 +113,4 @@ const signUp = async () => {
 };
 </script>
 
-<style>
-/* body {
-  background-color: black;
-} */
-</style>
+<style></style>

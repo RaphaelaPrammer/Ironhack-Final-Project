@@ -6,10 +6,10 @@
       <div class="account">
         <h3>Your account:</h3>
         <div class="account-grid">
-          <img
+          <!-- <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/300px-WelshCorgi.jpeg"
             alt=""
-          />
+          /> -->
           <router-link to="/account">Go to Account</router-link>
         </div>
       </div>

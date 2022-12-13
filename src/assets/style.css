@@ -38,6 +38,11 @@ body {
 button:hover {
   cursor: pointer;
 }
+.error {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+}
 
 /*----------- SignIn Component -------------------------*/
 .general-container {
@@ -440,4 +445,9 @@ h4 {
 .edit-profile-container label {
   font-size: 1.2rem;
   font-weight: bold;
+}
+.upload-image {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
