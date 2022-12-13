@@ -56,9 +56,13 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 
 ### 12.12.
 
-- [ ] User Profile
+- [x] User Profile
+
+### 13.12.
+
 - [ ] connect User Profile pic to account and Home view
-- [ ] show/hide Password Sign Up
+- [ ] show/hide Password Sign Up/Sign In
+- [ ] Solve error 500 with Sign up
 
 ### Backlog:
 
