@@ -3,14 +3,14 @@
     <Nav />
     <div class="wrapper">
       <h2>Welcome to ToDog App</h2>
-      <div class="account">
+      <!-- <div class="account">
         <h3>Welcome {{ yourname }}!</h3>
         <div class="account-grid">
           <img src="{{avatar_url}}" alt="" />
 
           <router-link to="/account">Go to Account</router-link>
         </div>
-      </div>
+      </div> -->
 
       <NewTask @getTasksHijo="getTasks" />
       <br />
