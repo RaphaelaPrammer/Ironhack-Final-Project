@@ -70,16 +70,16 @@ const getTasks = async () => {
 getTasks();
 
 //FOR AVATAR PIC ??????????????????????????????
-const userStore = useUserStore();
-const avatar_url = ref(null);
-const yourname = ref(null);
-const getProfile = async () => {
-  await userStore.fetchUser();
-  avatar_url.value = userStore.profile.avatar_url;
-  yourname.value = userStore.profile.yourname;
-  // console.log(avatar_url.value);
-};
-getProfile();
+// const userStore = useUserStore();
+// const avatar_url = ref(null);
+// const yourname = ref(null);
+// const getProfile = async () => {
+//   await userStore.fetchUser();
+//   avatar_url.value = userStore.profile.avatar_url;
+//   yourname.value = userStore.profile.yourname;
+//   // console.log(avatar_url.value);
+// };
+// getProfile();
 </script>
 
 <style></style>

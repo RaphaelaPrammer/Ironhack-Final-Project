@@ -65,7 +65,7 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 - [x] Solve error 500 with Sign up
 - [x] implement Categories
 
-### Backlog:
+### 14.12.
 
 - [ ] connect User Profile pic to HOME VIEW
 - [ ] show/hide Password Sign Up/Sign In
@@ -73,18 +73,13 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
   - [ ] delete Card
   - [ ] add Task with slide
 - [ ] show the Tasks in a list of categories
+
+### Backlog:
+
 - [ ] Slide de Tasks
 - [ ] implement SubTasks
 
 ---
 
-# [](https://github.com/zantonz/final-project/blob/master/README.md)ToDo App
-
+BOILERPLATE
 [Click para acceder a la web](https://todo-zantonz.vercel.app/)
-
-Autor: Anton Zyrianov
-Fecha: 25/08/2022
-
-## Descripcion
-
-![Pagina Home](https://i.postimg.cc/m2rV83dV/Captura-de-pantalla-2022-08-25-a-las-10-38-46.png)
