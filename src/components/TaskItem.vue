@@ -7,11 +7,11 @@
   >
     <div>
       <div class="top-status">
-        <div
+        <!-- <div
           v-bind:class="
             props.task.is_complete ? 'btn-complete' : 'btn-not-complete'
           "
-        ></div>
+        ></div> -->
         <h5
           class="top-category"
           :class="
@@ -74,6 +74,56 @@
           type="text"
           v-model="description"
         />
+
+        <!-- Edit Category  -->
+
+        <div class="edit-category">
+          <div>
+            <div class="family">
+              <input
+                type="radio"
+                id="family"
+                name="category"
+                value="family"
+                v-model="category"
+              />
+              <label for="family"> Family</label>
+            </div>
+            <div class="business">
+              <input
+                type="radio"
+                id="business"
+                name="category"
+                value="business"
+                v-model="category"
+              />
+              <label for="business"> Business</label>
+            </div>
+          </div>
+          <div>
+            <div class="leisure">
+              <input
+                type="radio"
+                id="leisure"
+                name="category"
+                value="leisure"
+                v-model="category"
+              />
+              <label for="leisure"> Leisure</label>
+            </div>
+            <div class="other">
+              <input
+                type="radio"
+                id="other"
+                name="category"
+                value="other"
+                v-model="category"
+              />
+              <label for="other"> Other</label>
+            </div>
+          </div>
+        </div>
+
         <BlackButton @logOut="changeTask">Save</BlackButton>
         <!-- <button class="btn-edit-complete" @click="changeTask">Save</button> -->
       </div>
@@ -113,10 +163,13 @@ const changeBooleanFunction = () => {
   changeBoolean.value = !changeBoolean.value;
 };
 const changeTask = async () => {
-  await taskStore.changeTask(name.value, description.value, props.task.id);
+  await taskStore.changeTask(
+    name.value,
+    description.value,
+    category.value,
+    props.task.id
+  );
   changeBoolean.value = false;
-  name.value = "";
-  description.value = "";
   emit("getTasksHijo");
 };
 

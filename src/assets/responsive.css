@@ -70,7 +70,10 @@
     color: var(--colorMnBlue);
   }
   .container-welcome-logout-big-screen {
-    text-align: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     margin-right: 20px;
   }
   /* ---------------------------------------  */
@@ -122,6 +125,6 @@
   .container-account {
     grid-template-columns: 1fr;
     text-align: center;
-    max-width: 60vw;
+    max-width: 40vw;
   }
 }

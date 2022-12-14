@@ -29,7 +29,7 @@
           value="family"
           v-model="category"
         />
-        <label for="family" checked> Family</label>
+        <label for="family"> Family</label>
       </div>
       <div class="business">
         <input
@@ -53,6 +53,7 @@
       </div>
       <div class="other">
         <input
+          checked
           type="radio"
           id="other"
           name="category"
@@ -106,34 +107,4 @@ const addTask = async () => {
 };
 </script>
 
-<style>
-.error-text {
-  font-size: 1.2rem;
-  color: black;
-  background: rgba(255, 0, 0, 0.548);
-}
-.radio-buttons-container {
-  display: flex;
-  gap: 20px;
-}
-.family,
-.business,
-.leisure,
-.other {
-  border-radius: 10px;
-  padding: 5px;
-  font-weight: bold;
-}
-.family {
-  background: #7a4b94b0;
-}
-.business {
-  background: #7d82b8c2;
-}
-.leisure {
-  background: #b7e3ccb6;
-}
-.other {
-  background: #ffcf56ce;
-}
-</style>
+<style></style>

@@ -14,7 +14,12 @@
         <router-link to="/account">Your Account</router-link>
 
         <div class="container-welcome-logout-big-screen">
-          <p>Welcome {{ getUser.email }}</p>
+          <img
+            class="img-avatar-nav"
+            :src="storageAvatarURL + avatar_url"
+            alt="avatar-default"
+          />
+          <p>Welcome {{ yourname }}</p>
 
           <BlackButton @logOut="signOut"> Log Out </BlackButton>
         </div>
@@ -23,27 +28,35 @@
     <!-- Menu for small screen width:  -->
     <div class="nav-small-screen" v-show="changeBoolean">
       <ul class="links">
-        <li class="nav-item">
-          <router-link class="nav-link" to="/">Task Manager</router-link>
+        <li>
+          <router-link to="/">Task Manager</router-link>
         </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link" to="/account">Your Account</router-link>
+        <li>
+          <router-link to="/account">Your Account</router-link>
         </li>
 
-        <div class="container-welcome-logout">
-          <li class="nav-item">
-            <p>Welcome {{ getUser.email }}</p>
-          </li>
-          <li class="nav-item">
-            <BlackButton @logOut="signOut"> Log Out </BlackButton>
-          </li>
-        </div>
+        <li>
+          <p>Welcome {{ yourname }}</p>
+        </li>
+
+        <li>
+          <img
+            class="img-avatar-nav"
+            :src="storageAvatarURL + avatar_url"
+            alt="avatar-default"
+          />
+        </li>
+        <li>
+          <p>{{ email }}</p>
+        </li>
+        <li>
+          <BlackButton @logOut="signOut"> Log Out </BlackButton>
+        </li>
       </ul>
     </div>
   </nav>
   <!-- Original!! --Hide Router and last button!!-------- -->
-
   <!-- <nav class="navbar">
     <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link" />
     <router-link to="/">
@@ -79,8 +92,9 @@
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { ref, toRefs, watch } from "vue";
 import BlackButton from "./BlackButton.vue";
+import { supabase } from "../supabase";
 
 //constant to save a variable that will hold the use router method
 const route = "/";
@@ -88,15 +102,43 @@ const buttonText = "Todo app";
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
 const getUser = computed(() => useUserStore().user);
-const getProfile = computed(() => useUserStore().profile);
 
+const userStoreComputed = computed(() => useUserStore());
+
+//---------------------
+const userStore = useUserStore();
+const avatar_url = ref(null);
+const yourname = ref(null);
+const email = ref(null);
+
+const getProfile = async () => {
+  await userStore.fetchUser();
+  yourname.value = userStore.profile.yourname;
+  avatar_url.value = userStore.profile.avatar_url;
+  email.value = userStore.user.email;
+};
+getProfile();
+
+//---------------------------
+
+// const publicAvatarTwo = ref(
+//   `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`
+// );
+
+// const avatarTest = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`;
+
+// const avatarTestTwo = import.meta.env.AVATAR_BASE_URL;
+
+const storageAvatarURL = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/`;
+
+//------------------
+//------------------
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 
 const signOut = async () => {
   try {
     // call the user store and send the users info to backend to signOut
-
     await useUserStore().signOut();
     // then redirect user to the homeView
     redirect.push({ path: "/auth/login" });

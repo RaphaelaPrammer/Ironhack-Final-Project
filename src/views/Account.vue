@@ -9,9 +9,10 @@
 
   <div class="container-account">
     <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
+
     <div>
       <h4>
-        <img src="../assets/icons/scoobydoo.png" alt="" />{{
+        <img src="../assets/icons/scoobydoo.png" alt="HELLO" />{{
           userStore.user.email
         }}
       </h4>
@@ -51,10 +52,23 @@ import Nav from "../components/Nav.vue";
 import BlackButton from "../components/BlackButton.vue";
 import Avatar from "../components/Avatar.vue";
 import { useRouter } from "vue-router";
+import { RESOLVE_FILTER } from "@vue/compiler-core";
+import { storeToRefs } from "pinia";
 
 const userStore = useUserStore();
 
-// const username = ref("");
+//------------------TEST INSERT AVATAR IMAGE OUTSIDE OF AVATAR COMPONENT---------------------
+
+// const publicAvatar = process.env.AVATAR_BASE_URL;
+// const publicAvatarTwo = ref(
+//   `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`
+// );
+// const { profile } = storeToRefs(useUserStore());
+// const profileAvatar = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${profile}`;
+
+// console.log(profileAvatar);
+
+//----------------------------------------------
 const yourname = ref(null);
 const avatar_url = ref(null);
 const website = ref(null);
@@ -73,6 +87,7 @@ async function getProfile() {
   email.value = userStore.user.email;
 }
 
+//----------------------------------------------------
 // async function signOut() {
 //   try {
 //     loading.value = true;

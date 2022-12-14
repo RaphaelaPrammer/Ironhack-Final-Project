@@ -129,7 +129,7 @@ nav img {
   background-color: var(--colorPastelPink);
   border-radius: 0px 0px 20px 20px;
   width: 100vw;
-  height: 70px;
+  height: 80px;
   box-shadow: var(--box-shadow-top-bottom);
   display: flex;
   justify-content: space-between;
@@ -150,21 +150,22 @@ nav img {
   /* position: relative;
   top: 00px; */
   background-color: var(--colorPastelPink);
-  background-image: url("./imgs/header-dogs-4-short.jpg");
+  /* background-image: url("./imgs/header-dogs-4-short.jpg"); */
   background-size: 1300px;
   /* background-position-y: 0%; */
   background-position-x: 100%;
   background-repeat: no-repeat;
 }
-.links p,
-.links a {
+.links p {
   font-size: 1.3rem;
-
+  font-weight: bold;
+}
+.links a {
+  font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
   color: var(--colorMnBlue);
-
-  background: white;
+  /* background: white; */
 }
 .links a:hover {
   color: var(--colorPastelPink);
@@ -192,7 +193,11 @@ nav img {
 .nav-big-screen {
   display: none;
 }
-
+.img-avatar-nav {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 /* ---------YOUR ACCOUNT-------------*/
 .account {
   text-align: center;
@@ -251,6 +256,36 @@ h1 {
   padding-left: 5px;
   box-shadow: var(--box-shadow-small);
 }
+
+.error-text {
+  font-size: 1.2rem;
+  color: black;
+  background: rgba(255, 0, 0, 0.548);
+}
+.radio-buttons-container {
+  display: flex;
+  gap: 20px;
+}
+.family,
+.business,
+.leisure,
+.other {
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+.family {
+  background: #7a4b94b0;
+}
+.business {
+  background: #7d82b8c2;
+}
+.leisure {
+  background: #b7e3ccb6;
+}
+.other {
+  background: #ffcf56ce;
+}
 /* --------------------------------------------*/
 /* -------------------All TASKS ---------------*/
 .container-all-tasks {
@@ -283,6 +318,7 @@ h1 {
   -moz-box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
   box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
 }
+
 .top-status {
   display: flex;
   justify-content: center;
@@ -302,6 +338,7 @@ h1 {
   margin: 10px 0;
 }
 .edit-input-fields input {
+  font-size: 1rem;
   border: none;
   border-radius: 10px;
   padding-left: 5px;
@@ -428,8 +465,9 @@ h4 {
   font-size: 1.1rem;
 }
 .container-account {
+  text-align: center;
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-columns: 1fr;
   max-width: 80vw;
   margin: 0 auto;
   gap: 5px;
