@@ -7,11 +7,6 @@
   >
     <div>
       <div class="top-status">
-        <!-- <div
-          v-bind:class="
-            props.task.is_complete ? 'btn-complete' : 'btn-not-complete'
-          "
-        ></div> -->
         <h5
           class="top-category"
           :class="
@@ -40,13 +35,13 @@
       <!-- Button change status  -->
       <button
         title="Task not completed"
-        class="btn-not-complete"
+        class="btn-not-complete btn"
         v-if="props.task.is_complete"
         @click="changeStatus"
       ></button>
       <button
         title="task completed"
-        class="btn-complete"
+        class="btn-complete btn"
         v-else
         @click="changeStatus"
       ></button>
@@ -54,14 +49,14 @@
       <!-- EDIT Button  -->
       <button
         title="edit task"
-        class="btn-edit"
+        class="btn-edit btn"
         @click="changeBooleanFunction"
       ></button>
 
       <!-- DELETE BUTTON  -->
       <button
         title="delete Task"
-        class="btn-delete"
+        class="btn-delete btn"
         @click="deleteTask"
       ></button>
 
@@ -71,7 +66,7 @@
         <input type="text" placeholder="Change Title" v-model="name" />
         <input
           placeholder="change Description"
-          type="text"
+          type="textarea"
           v-model="description"
         />
 
@@ -125,7 +120,6 @@
         </div>
 
         <BlackButton @logOut="changeTask">Save</BlackButton>
-        <!-- <button class="btn-edit-complete" @click="changeTask">Save</button> -->
       </div>
     </div>
   </div>

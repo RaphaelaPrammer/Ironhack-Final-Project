@@ -48,7 +48,7 @@
               <button
                 class="eye-btn"
                 :class="showPassword ? 'btn-hide-pwd' : 'btn-show-pwd'"
-                @click="toggleShow"
+                @click.prevent="toggleShow"
               ></button>
             </div>
           </div>
@@ -75,7 +75,7 @@
               <button
                 class="eye-btn"
                 :class="showPassword ? 'btn-hide-pwd' : 'btn-show-pwd'"
-                @click="toggleShow"
+                @click.prevent="toggleShow"
               ></button>
             </div>
           </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="new-tasks-container">
-    <h1>ADD A NEW TASK</h1>
+    <h1 @click="toggleShow">ADD A NEW TASK</h1>
 
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
 
-    <div class="add-task-container">
+    <div v-show="showAddTask" class="add-task-container">
       <div>
         <input
           class="add-task-input"
@@ -112,18 +112,10 @@ const addTask = async () => {
 };
 
 // Toggle function to show and hide the add task container.
-const showAddTask = ref(false);
+const showAddTask = ref(true);
 const toggleShow = () => {
   showAddTask.value = !showAddTask.value;
 };
-
-// const setShowAddTask = () => {
-//   if (taskStore.tasks.length === 0) {
-//     showAddTask.value = true;
-//   }
-// };
-// setShowAddTask();
-// console.log(taskStore.tasks.length);
 </script>
 
 <style></style>

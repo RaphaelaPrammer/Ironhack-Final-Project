@@ -3,9 +3,11 @@
     <Nav />
     <div class="wrapper">
       <h2>Welcome to ToDog App &#127789;</h2>
+      <!-- ADD NEW TASK COMPONENT  -->
       <NewTask @getTasksHijo="getTasks" />
       <br />
-      <h2 class="task-heading">Open Tasks</h2>
+      <!-- ALL TASKS SECTION  -->
+      <h2 id="open-tasks" class="task-heading">Open Tasks</h2>
       <h4 class="task-subheading" v-if="!tasksNotCompleted.length">
         No open Tasks. Add a new Task now!
       </h4>
@@ -30,8 +32,10 @@
             :task="task"
             @getTasksHijo="getTasks"
         /></transition-group>
+        <a href="#open-tasks">back to open tasks</a>
       </div>
     </div>
+
     <Footer />
   </div>
 </template>
@@ -59,7 +63,7 @@ const getTasks = async () => {
   tasks.value = tasks.value.sort((a, b) => (a.inserted_at ? -1 : 1));
   tasks.value = tasks.value.sort((a, b) => (a.is_complete ? 1 : -1));
 
-  //COMPLETION:
+  //Completed Task List:
   tasksCompleted.value = tasks.value.filter((i) => i.is_complete);
   tasksNotCompleted.value = tasks.value.filter((i) => i.is_complete === false);
 };

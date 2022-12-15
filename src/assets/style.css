@@ -27,7 +27,6 @@
   font-size: 10px;
 }
 body {
-  background-color: antiquewhite;
   background-image: url("./imgs/pfote-white.png");
   background-size: 40px;
 }
@@ -45,11 +44,10 @@ button:hover {
 }
 
 /*----------- SignIn Component -------------------------*/
+/* -------------SignUp Component-------------- */
 .general-container {
   display: flex;
   flex-direction: column;
-  /* gap: 5px; */
-  /* background-image: url("./imgs/pfote.jpg"); */
   background-repeat: repeat;
   background-size: 50px;
 }
@@ -74,9 +72,6 @@ button:hover {
 }
 .container-sign-in {
   background-color: var(--colorPastelPink);
-
-  /* border-radius: 36% 64% 18% 82% / 49% 50% 60% 40%; */
-  /* border-radius: 200px; */
   border-radius: 0 0 200px 200px;
   box-shadow: var(--box-shadow-small);
   text-align: center;
@@ -117,7 +112,8 @@ input#password,
 input#confirmPassword {
   font-size: 1.4rem;
   border: none;
-  width: 85%;
+  width: 90%;
+  border-radius: 10px;
 }
 
 .btn-show-pwd {
@@ -141,8 +137,6 @@ input#confirmPassword {
   margin-top: 10px;
   font-size: 1.4rem;
 }
-
-/* -------------SignUp Component-------------- */
 
 /* --------------Home view-------------------- */
 .wrapper {
@@ -178,14 +172,7 @@ nav img {
   border-radius: 20px;
   box-shadow: var(--box-shadow-small);
   gap: 7px;
-  /* position: relative;
-  top: 00px; */
   background-color: var(--colorPastelPink);
-  /* background-image: url("./imgs/header-dogs-4-short.jpg"); */
-  background-size: 1300px;
-  /* background-position-y: 0%; */
-  background-position-x: 100%;
-  background-repeat: no-repeat;
 }
 .links p {
   font-size: 1.3rem;
@@ -215,7 +202,7 @@ nav img {
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 40%;
+  border-radius: 50%;
   margin: 10px;
 }
 .btn-hamburger:hover {
@@ -237,7 +224,8 @@ nav img {
   display: flex;
   flex-direction: column;
   width: 90vw;
-  margin: 5px auto 0 auto;
+  margin: 10px auto 10px auto;
+  padding: 10px 0;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -245,20 +233,16 @@ nav img {
 .new-tasks-container h1 {
   font-size: 1.7rem;
   text-align: center;
+  border-bottom: #000000 solid 1px;
 }
-/* .add-new-task-and-button {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  text-align: center;
-} */
-/* .btn-show-add-task {
-  background-image: url("../assets/icons/add.png");
-  background-size: contain;
-  border: none;
-  width: 30px;
-  height: 30px;
-} */
+.new-tasks-container h1:hover {
+  cursor: pointer;
+}
+.new-tasks-container {
+  background: #8688a2d8;
+  border-radius: 20px;
+}
+
 .add-task-input {
   background-color: var(--colorLightGrey);
   font-size: 1rem;
@@ -382,50 +366,27 @@ h3,
 .task-not-complete {
   color: var(--colorBlack);
 }
-.btn-delete {
-  background-image: url("./icons/dog-poo-1.png");
-  background-position: center;
-  background-size: contain;
-  width: var(--icon-width);
-  height: var(--icon-height);
-  /* border-radius: 30%; */
-  border: none;
-  margin: var(--icon-margin);
-}
-.btn-edit {
-  background-image: url("./icons/edit.png");
+.btn {
   background-repeat: none;
   background-position: center;
   background-size: contain;
   width: var(--icon-width);
   height: var(--icon-height);
-  /* border-radius: 30%; */
   border: none;
   margin: var(--icon-margin);
+}
+.btn-delete {
+  background-image: url("./icons/dog-poo-1.png");
+}
+.btn-edit {
+  background-image: url("./icons/edit.png");
 }
 
 .btn-complete {
-  /* background-image: url("./icons/task_done_green.png"); */
-  /* background-position: center; */
   background-image: url("./icons/dog-task-done.png");
-  background-size: cover;
-  /* border-radius: 30%; */
-  /* outline: var(--colorWhite) 5px solid; */
-  width: var(--icon-width);
-  height: var(--icon-height);
-  border: none;
-  margin: var(--icon-margin);
 }
 .btn-not-complete {
-  /* background-image: url("./icons/task-not-completed-red.png"); */
   background-image: url("./icons/dog-task-not-done.png");
-  border-radius: 30%;
-  /* outline: var(--colorWhite) 5px solid; */
-  background-size: cover;
-  width: var(--icon-width);
-  height: var(--icon-height);
-  border: none;
-  margin: var(--icon-margin);
 }
 /* --------------------------------------------*/
 /* -------------------FOOTER------------------*/
@@ -470,16 +431,16 @@ footer h6 {
 }
 .account-avatar-no-img {
   background-image: url("../assets/imgs/avatar-default.png");
-  background-size: contain;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  background-size: cover;
+  /* width: 100px;
+  height: 100px; */
+  /* border-radius: 50%; */
   box-shadow: var(--box-shadow-small);
 }
 
 h1 {
-  font-size: 2.8rem;
-  margin-top: 30px;
+  font-size: 2.5rem;
+  text-align: center;
 }
 h2 {
   font-size: 1.5rem;
@@ -499,7 +460,7 @@ h4 {
   align-items: center;
   justify-items: center;
   padding: 15px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: var(--colorPastelPink);
   box-shadow: var(--box-shadow-small);
   border-radius: 20px;

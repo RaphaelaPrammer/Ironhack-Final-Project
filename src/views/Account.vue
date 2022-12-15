@@ -1,11 +1,9 @@
 <template>
   <Nav />
 
-  <h1>Hello {{ yourname }} !</h1>
-  <!-- <h1>Hello {{ userStore.profile.yourname }} !</h1> -->
+  <h1>Hello &#127789; {{ yourname }} !</h1>
 
   <h2>Your Account:</h2>
-  <!-- <h2>User Name: {{ userStore.profile.username }}</h2> -->
 
   <div class="container-account">
     <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" />
@@ -18,15 +16,10 @@
       </h4>
       <h4><img src="../assets/icons/dog-robot.png" alt="" />{{ website }}</h4>
       <br />
-      <BlackButton @click="signOut">Log Out</BlackButton>
     </div>
     <div>
       <BlackButton @click="changeBoolean">Edit Profile</BlackButton>
       <div v-show="boolean">
-        <!-- <div>
-    <label for="username">Username</label>
-    <input id="username" type="text" v-model.lazy="username" />
-  </div> -->
         <div class="edit-profile-container">
           <div>
             <label for="yourname">Your Name</label><br />
@@ -41,6 +34,7 @@
         <BlackButton @logOut="updateProfile">Update </BlackButton>
       </div>
     </div>
+    <BlackButton @click="signOut">Log Out</BlackButton>
   </div>
 </template>
 
@@ -56,19 +50,6 @@ import { RESOLVE_FILTER } from "@vue/compiler-core";
 import { storeToRefs } from "pinia";
 
 const userStore = useUserStore();
-
-//------------------TEST INSERT AVATAR IMAGE OUTSIDE OF AVATAR COMPONENT---------------------
-
-// const publicAvatar = process.env.AVATAR_BASE_URL;
-// const publicAvatarTwo = ref(
-//   `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`
-// );
-// const { profile } = storeToRefs(useUserStore());
-// const profileAvatar = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${profile}`;
-
-// console.log(profileAvatar);
-
-//----------------------------------------------
 const yourname = ref(null);
 const avatar_url = ref(null);
 const website = ref(null);
@@ -86,19 +67,6 @@ async function getProfile() {
   website.value = userStore.profile.website;
   email.value = userStore.user.email;
 }
-
-//----------------------------------------------------
-// async function signOut() {
-//   try {
-//     loading.value = true;
-//     let { error } = await supabase.auth.signOut();
-//     if (error) throw error;
-//   } catch (error) {
-//     alert(error.message);
-//   } finally {
-//     loading.value = false;
-//   }
-// }
 
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();

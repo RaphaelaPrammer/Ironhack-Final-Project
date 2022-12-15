@@ -33,41 +33,44 @@
       </div>
     </div>
     <!-- Menu for small screen width:  -->
+
     <div class="nav-small-screen" v-show="changeBoolean">
-      <ul class="links">
-        <li>
-          <router-link to="/">Task Manager</router-link>
-        </li>
+      <transition-group name="fade">
+        <ul class="links">
+          <li>
+            <router-link to="/">Task Manager</router-link>
+          </li>
 
-        <li>
-          <router-link to="/account">Your Account</router-link>
-        </li>
+          <li>
+            <router-link to="/account">Your Account</router-link>
+          </li>
 
-        <li v-if="yourname">
-          <p>Welcome {{ yourname }}</p>
-        </li>
-        <!-- Avatar Image inside the NAV BAR - show the default avatar if no pic is uploaded yet-->
-        <li>
-          <img
-            v-if="avatar_url"
-            class="img-avatar-nav"
-            :src="storageAvatarURL + avatar_url"
-            alt="avatar-default"
-          />
-          <img
-            v-else
-            class="img-avatar-nav"
-            src="../assets/imgs/avatar-default.png"
-            alt="avatar-default"
-          />
-        </li>
-        <li>
-          <p>{{ email }}</p>
-        </li>
-        <li>
-          <BlackButton @logOut="signOut"> Log Out </BlackButton>
-        </li>
-      </ul>
+          <li v-if="yourname">
+            <p>Welcome {{ yourname }}</p>
+          </li>
+          <!-- Avatar Image inside the NAV BAR - show the default avatar if no pic is uploaded yet-->
+          <li>
+            <img
+              v-if="avatar_url"
+              class="img-avatar-nav"
+              :src="storageAvatarURL + avatar_url"
+              alt="avatar-default"
+            />
+            <img
+              v-else
+              class="img-avatar-nav"
+              src="../assets/imgs/avatar-default.png"
+              alt="avatar-default"
+            />
+          </li>
+          <li>
+            <p>{{ email }}</p>
+          </li>
+          <li>
+            <BlackButton @logOut="signOut"> Log Out </BlackButton>
+          </li>
+        </ul>
+      </transition-group>
     </div>
   </nav>
 </template>
@@ -92,6 +95,7 @@ const buttonText = "Todo app";
 
 //---------------------
 const userStore = useUserStore();
+
 const avatar_url = ref(null);
 const yourname = ref(null);
 const email = ref(null);
@@ -104,16 +108,7 @@ const getProfile = async () => {
 };
 getProfile();
 
-//---------------------------
-
-// const publicAvatarTwo = ref(
-//   `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`
-// );
-
-// const avatarTest = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/${userStore.profile.avatar_url}`;
-
-// const avatarTestTwo = import.meta.env.AVATAR_BASE_URL;
-
+//Const that stores the URL of the Storage for the avatar pictures
 const storageAvatarURL = `https://urhcynxgozxdqhzkmsqb.supabase.co/storage/v1/object/public/avatar/`;
 
 //------------------
@@ -137,11 +132,20 @@ const signOut = async () => {
   errorMsg.value = "error";
 };
 
-//HAMBURGER
+//Toggle HAMBURGER
 const changeBoolean = ref(false);
 const toggle = () => {
   changeBoolean.value = !changeBoolean.value;
 };
 </script>
 
-<style></style>
+<style scoped>
+.fade-enter-from,
+.fade-leave-to {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+</style>
