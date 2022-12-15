@@ -183,7 +183,6 @@ nav img {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  /* background: white; */
 }
 .links a:hover {
   color: var(--colorMnBlue);
@@ -314,13 +313,12 @@ nav img {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  /* gap: 5px; */
+
   width: 250px;
   min-height: 100px;
   justify-content: center;
   align-items: center;
   margin: 20px auto 20px auto;
-  /* padding: 10px; */
 }
 .container-task:hover {
   -webkit-box-shadow: 8px 10px 5px 0px var(--colorHeliotropeGrey);
@@ -393,7 +391,7 @@ h3,
 
 footer {
   width: 100vw;
-  /* height: 20px; */
+
   position: fixed;
   bottom: 0;
   background-color: var(--colorPastelPink);
@@ -406,7 +404,6 @@ footer {
   align-items: center;
   gap: 10px;
   margin-top: 20px;
-  /* text-align: center; */
 }
 
 .footer-image img {
@@ -432,9 +429,6 @@ footer h6 {
 .account-avatar-no-img {
   background-image: url("../assets/imgs/avatar-default.png");
   background-size: cover;
-  /* width: 100px;
-  height: 100px; */
-  /* border-radius: 50%; */
   box-shadow: var(--box-shadow-small);
 }
 

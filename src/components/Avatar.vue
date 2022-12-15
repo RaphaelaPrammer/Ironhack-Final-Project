@@ -96,7 +96,6 @@ watch(path, () => {
   border: none;
   width: 90px;
   padding: 4px 4px;
-  /* margin-bottom: 15px; */
 }
 .upload-image:hover {
   cursor: pointer;
