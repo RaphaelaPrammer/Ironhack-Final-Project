@@ -67,9 +67,12 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 
 ### 14.12.
 
-- [ ] connect User Profile pic to NAV BAR
+- [x] connect User Profile pic to NAV BAR
 - [x] change category
-- [ ] show/hide Password Sign Up/Sign In
+- [x] show/hide Password Sign Up/Sign In
+
+### 15.12.
+
 - [ ] Animations
   - [ ] delete Card
   - [ ] add Task with slide

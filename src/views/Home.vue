@@ -2,19 +2,13 @@
   <div>
     <Nav />
     <div class="wrapper">
-      <h2>Welcome to ToDog App</h2>
-      <!-- <div class="account">
-        <h3>Welcome {{ yourname }}!</h3>
-        <div class="account-grid">
-          <img src="{{avatar_url}}" alt="" />
-
-          <router-link to="/account">Go to Account</router-link>
-        </div>
-      </div> -->
-
+      <h2>Welcome to ToDog App &#127789;</h2>
       <NewTask @getTasksHijo="getTasks" />
       <br />
-      <h1>Open Tasks</h1>
+      <h2 class="task-heading">Open Tasks</h2>
+      <h4 class="task-subheading" v-if="!tasksNotCompleted.length">
+        No open Tasks. Add a new Task now!
+      </h4>
       <div class="container-all-tasks">
         <TaskItem
           v-for="task in tasksNotCompleted"
@@ -23,7 +17,10 @@
           @getTasksHijo="getTasks"
         />
       </div>
-      <h1>Completed Tasks</h1>
+      <h2 class="task-heading">Completed Tasks</h2>
+      <h4 class="task-subheading" v-if="!tasksCompleted.length">
+        No completed Tasks yet. Start doing something!
+      </h4>
       <div class="container-all-tasks">
         <TaskItem
           v-for="task in tasksCompleted"
@@ -38,15 +35,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
-import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
-import { useUserStore } from "../stores/user";
-import { isTemplateNode } from "@vue/compiler-core";
 
 const taskStore = useTaskStore();
 
@@ -68,6 +62,8 @@ const getTasks = async () => {
   tasksNotCompleted.value = tasks.value.filter((i) => i.is_complete === false);
 };
 getTasks();
+
+//
 </script>
 
 <style></style>

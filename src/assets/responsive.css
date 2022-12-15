@@ -1,5 +1,7 @@
 /* ----------------btw 567px and 769px------------------------ */
 @media screen and (min-width: 567px) {
+  /* ---------------------------------------  */
+  /* -------All Tasks section----------  */
   .container-all-tasks {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -14,6 +16,8 @@
   * {
     font-size: 0.8rem;
   }
+  /* ---------------------------------------  */
+  /* -------All Tasks section----------  */
   .container-all-tasks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -21,21 +25,13 @@
     gap: 20px;
     /* max-width: 70vw; */
   }
+
   /* ---------------------------------------  */
   /* --------Add Task Section---------------  */
   .add-task-container {
     margin-bottom: 20px;
   }
-  .add-task-container input {
-    width: 50vw;
-    gap: 20px;
-  }
-  /* ---------------------------------------  */
-  /* --------Add Task Section---------------  */
-  .add-task-container {
-    margin-bottom: 20px;
-  }
-  .add-task-container input {
+  .add-task-input {
     width: 50vw;
     gap: 20px;
   }
@@ -45,7 +41,8 @@
   * {
     font-size: 0.8rem;
   }
-  /* Nav bar  */
+  /* ---------------------------------------  */
+  /* -----------------NAV BAR------------------  */
 
   .btn-hamburger,
   .nav-small-screen {
@@ -62,12 +59,12 @@
   .nav-big-screen p {
     text-decoration: none;
     font-size: 1.5rem;
-    color: black;
+    color: var(--colorMnBlue);
     font-weight: bold;
   }
   .nav-big-screen a:hover {
     cursor: pointer;
-    color: var(--colorMnBlue);
+    color: white;
   }
   .container-welcome-logout-big-screen {
     display: flex;
@@ -98,7 +95,7 @@
   .add-task-container {
     margin-bottom: 20px;
   }
-  .add-task-container input {
+  .add-task-input {
     width: 50vw;
     gap: 20px;
   }

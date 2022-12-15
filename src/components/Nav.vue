@@ -1,5 +1,4 @@
 <template>
-  <!-- TEST HAMBURGER -----------------  -->
   <nav>
     <div class="navbar">
       <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
@@ -14,12 +13,20 @@
         <router-link to="/account">Your Account</router-link>
 
         <div class="container-welcome-logout-big-screen">
+          <!-- Avatar Image inside the NAV BAR - show the default avatar if no pic is uploaded yet-->
           <img
+            v-if="avatar_url"
             class="img-avatar-nav"
             :src="storageAvatarURL + avatar_url"
             alt="avatar-default"
           />
-          <p>Welcome {{ yourname }}</p>
+          <img
+            v-else
+            class="img-avatar-nav"
+            src="../assets/imgs/avatar-default.png"
+            alt="avatar-default"
+          />
+          <p v-if="yourname">Welcome {{ yourname }}</p>
 
           <BlackButton @logOut="signOut"> Log Out </BlackButton>
         </div>
@@ -36,14 +43,21 @@
           <router-link to="/account">Your Account</router-link>
         </li>
 
-        <li>
+        <li v-if="yourname">
           <p>Welcome {{ yourname }}</p>
         </li>
-
+        <!-- Avatar Image inside the NAV BAR - show the default avatar if no pic is uploaded yet-->
         <li>
           <img
+            v-if="avatar_url"
             class="img-avatar-nav"
             :src="storageAvatarURL + avatar_url"
+            alt="avatar-default"
+          />
+          <img
+            v-else
+            class="img-avatar-nav"
+            src="../assets/imgs/avatar-default.png"
             alt="avatar-default"
           />
         </li>
@@ -56,35 +70,6 @@
       </ul>
     </div>
   </nav>
-  <!-- Original!! --Hide Router and last button!!-------- -->
-  <!-- <nav class="navbar">
-    <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link" />
-    <router-link to="/">
-      <img src="../assets/imgs/pfote.jpg" alt="" />
-    </router-link>
-
-    <ul>
-      <li>
-        <router-link class="link" to="/">Task Manager</router-link>
-      </li>
-
-      <li>
-        <router-link class="link" to="/account">Your Account</router-link>
-      </li>
-    </ul>
-
-    <div>
-      <ul class="log-out-welcome">
-        <li>
-          <p>Welcome {{ userEmail }}</p>
-        </li>
-        <li>
-          <BlackButton @logOut="signOut"> Log Out </BlackButton>
-          <button @click="signOut" class="button-log-out">Log out</button>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
 </template>
 
 <script setup>
@@ -101,9 +86,9 @@ const route = "/";
 const buttonText = "Todo app";
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
-const getUser = computed(() => useUserStore().user);
+// const getUser = computed(() => useUserStore().user);
 
-const userStoreComputed = computed(() => useUserStore());
+// const userStoreComputed = computed(() => useUserStore());
 
 //---------------------
 const userStore = useUserStore();

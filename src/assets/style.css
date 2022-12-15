@@ -15,8 +15,8 @@
     0 15px 12px rgba(0, 0, 0, 0.22);
   --box-shadow-top-bottom: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
     0px 25px 20px -20px rgba(0, 0, 0, 0.45);
-  --icon-width: 25px;
-  --icon-height: 25px;
+  --icon-width: 20px;
+  --icon-height: 20px;
   --icon-margin: 7px;
 }
 
@@ -78,7 +78,7 @@ button:hover {
   /* border-radius: 36% 64% 18% 82% / 49% 50% 60% 40%; */
   /* border-radius: 200px; */
   border-radius: 0 0 200px 200px;
-  box-shadow: var(--box-shadow-imgs);
+  box-shadow: var(--box-shadow-small);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -95,20 +95,51 @@ button:hover {
 }
 
 .input-field-label {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
-.form-sign-in input {
-  font-size: 1rem;
+.input-field,
+.input-pwd {
+  font-size: 1.4rem;
   width: 40%;
   height: 30px;
   border: none;
   border-radius: 10px;
   padding-left: 5px;
+  background: white;
   box-shadow: var(--box-shadow-small);
 }
-.form-sign-in p {
+.input-pwd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+input#password,
+input#confirmPassword {
+  font-size: 1.4rem;
+  border: none;
+  width: 85%;
+}
+
+.btn-show-pwd {
+  background-image: url("../assets/icons/visibility.png");
+}
+.btn-hide-pwd {
+  background-image: url("../assets/icons/visibility_off.png");
+}
+
+.eye-btn {
+  background-size: cover;
+  border-radius: 5px;
+  border: none;
+  width: 20px;
+  height: 20px;
+  float: right;
+}
+
+.form-sign-in p,
+.form-sign-in a {
   margin-top: 10px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 /* -------------SignUp Component-------------- */
@@ -164,11 +195,11 @@ nav img {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: var(--colorMnBlue);
+  color: white;
   /* background: white; */
 }
 .links a:hover {
-  color: var(--colorPastelPink);
+  color: var(--colorMnBlue);
 }
 .container-welcome-logout {
   display: flex;
@@ -198,38 +229,7 @@ nav img {
   height: 50px;
   border-radius: 50%;
 }
-/* ---------YOUR ACCOUNT-------------*/
-.account {
-  text-align: center;
-  background-color: var(--colorPastelPink);
-  box-shadow: var(--box-shadow-small);
-  border-radius: 30px;
-  width: 200px;
-  height: 100px;
-  margin: 0 5px 0 auto;
-}
-.account-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-}
-.account img {
-  width: 50px;
-  height: 60px;
-  border-radius: 50px;
-}
-.account h3 {
-  font-size: 1.5rem;
-}
-.account a {
-  text-decoration: none;
-  font-size: 1.3rem;
-  color: black;
-}
-.account a:hover {
-  color: var(--colorMnBlue);
-}
+
 /* --------------------------------------------*/
 /* -------------------ADD NEW TASK-------------*/
 .new-tasks-container,
@@ -242,11 +242,24 @@ nav img {
   align-items: center;
   gap: 10px;
 }
-h1 {
-  font-size: 1.8rem;
+.new-tasks-container h1 {
+  font-size: 1.7rem;
   text-align: center;
 }
-.add-task-container input {
+.add-new-task-and-button {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  text-align: center;
+}
+.btn-show-add-task {
+  background-image: url("../assets/icons/add.png");
+  background-size: contain;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.add-task-input {
   background-color: var(--colorLightGrey);
   font-size: 1rem;
   width: 80vw;
@@ -264,6 +277,7 @@ h1 {
 }
 .radio-buttons-container {
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 .family,
@@ -288,12 +302,23 @@ h1 {
 }
 /* --------------------------------------------*/
 /* -------------------All TASKS ---------------*/
+.task-heading {
+  background: var(--colorHeliotropeGrey);
+  border-radius: 10px;
+  width: 50vw;
+  margin: 0 auto;
+}
+.task-subheading {
+  color: slateblue;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
 .container-all-tasks {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 50x; */
   width: 90vw;
   padding-bottom: 50px;
   margin: 0 auto 0px auto;

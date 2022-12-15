@@ -5,7 +5,7 @@
       <div class="header">
         <div class="header-description">
           <div class="header-logo">
-            <img src="../assets/imgs/pfote.jpg" alt="header-img" />
+            <img src="../assets/imgs/pawprint.png" alt="logo" />
           </div>
           <h3 class="header-title">Register to ToDoG App</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
@@ -27,25 +27,57 @@
           </div>
           <div class="form-input">
             <label class="input-field-label">Password</label>
-            <input
-              type="password"
-              class="input-field"
-              placeholder="**********"
-              id="password"
-              v-model="password"
-              required
-            />
+            <div class="input-pwd">
+              <input
+                v-if="showPassword"
+                type="text"
+                placeholder="**********"
+                id="password"
+                v-model="password"
+                required
+              />
+
+              <input
+                v-else
+                type="password"
+                placeholder="**********"
+                id="password"
+                v-model="password"
+                required
+              />
+              <button
+                class="eye-btn"
+                :class="showPassword ? 'btn-hide-pwd' : 'btn-show-pwd'"
+                @click="toggleShow"
+              ></button>
+            </div>
           </div>
           <div class="form-input">
             <label class="input-field-label">Confirm password</label>
-            <input
-              type="password"
-              class="input-field"
-              placeholder="**********"
-              id="confirmPassword"
-              v-model="confirmPassword"
-              required
-            />
+            <div class="input-pwd">
+              <input
+                v-if="showPassword"
+                type="text"
+                placeholder="**********"
+                id="confirmPassword"
+                v-model="confirmPassword"
+                required
+              />
+
+              <input
+                v-else
+                type="password"
+                placeholder="**********"
+                id="confirmPassword"
+                v-model="confirmPassword"
+                required
+              />
+              <button
+                class="eye-btn"
+                :class="showPassword ? 'btn-hide-pwd' : 'btn-show-pwd'"
+                @click="toggleShow"
+              ></button>
+            </div>
           </div>
           <BlackButton type="submit">Sign Up</BlackButton>
           <!-- <button class="button" type="submit">Sign Up</button> -->
@@ -110,6 +142,12 @@ const signUp = async () => {
     return;
   }
   errorMsg.value = "error";
+};
+
+//SHOW / HIDE PASSWORD:
+const showPassword = ref(false);
+const toggleShow = () => {
+  showPassword.value = !showPassword.value;
 };
 </script>
 
