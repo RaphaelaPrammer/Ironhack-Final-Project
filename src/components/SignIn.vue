@@ -1,5 +1,3 @@
-<!-- COMPONENTE BOILERPLATE -->
-
 <template>
   <div class="general-container">
     <div class="header-img"></div>
@@ -55,7 +53,7 @@
             </div>
           </div>
           <BlackButton type="submit">Sign In</BlackButton>
-          <!-- <button class="button" type="submit">Sign In</button> -->
+
           <p>
             Dont have an account?
             <PersonalRouter

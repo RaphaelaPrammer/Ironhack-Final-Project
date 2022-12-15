@@ -80,7 +80,7 @@
             </div>
           </div>
           <BlackButton type="submit">Sign Up</BlackButton>
-          <!-- <button class="button" type="submit">Sign Up</button> -->
+
           <p>
             Have an account?
             <PersonalRouter

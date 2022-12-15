@@ -1,75 +1,72 @@
 <template>
   <div class="new-tasks-container">
-    <div class="add-new-task-and-button">
-      <h1>ADD A NEW TASK</h1>
-      <button class="btn-show-add-task" @click="toggleShow"></button>
-    </div>
+    <h1>ADD A NEW TASK</h1>
+
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
-    <div v-show="showAddTask">
-      <div class="add-task-container">
-        <div>
-          <input
-            class="add-task-input"
-            type="text"
-            placeholder="Add a Task Title - Go to the Park and Play"
-            v-model="name"
-          />
-        </div>
-        <div>
-          <input
-            class="add-task-input"
-            type="text"
-            placeholder="Add a Task Description - Bring the ball, cookies and a stick."
-            v-model="description"
-          />
-        </div>
-        <div class="radio-buttons-container">
-          <div class="family">
-            <input
-              type="radio"
-              id="family"
-              name="category"
-              value="family"
-              v-model="category"
-            />
-            <label for="family"> Family</label>
-          </div>
-          <div class="business">
-            <input
-              type="radio"
-              id="business"
-              name="category"
-              value="business"
-              v-model="category"
-            />
-            <label for="business"> Business</label>
-          </div>
-          <div class="leisure">
-            <input
-              type="radio"
-              id="leisure"
-              name="category"
-              value="leisure"
-              v-model="category"
-            />
-            <label for="leisure"> Leisure</label>
-          </div>
-          <div class="other">
-            <input
-              checked
-              type="radio"
-              id="other"
-              name="category"
-              value="other"
-              v-model="category"
-            />
-            <label for="other"> Other</label>
-          </div>
-        </div>
-        <BlackButton class="button" @click="addTask">Add</BlackButton>
+
+    <div class="add-task-container">
+      <div>
+        <input
+          class="add-task-input"
+          type="text"
+          placeholder="Add a Task Title - Go to the Park and Play"
+          v-model="name"
+        />
       </div>
+      <div>
+        <input
+          class="add-task-input"
+          type="text"
+          placeholder="Add a Task Description - Bring the ball, cookies and a stick."
+          v-model="description"
+        />
+      </div>
+      <div class="radio-buttons-container">
+        <div class="family">
+          <input
+            type="radio"
+            id="family"
+            name="category"
+            value="family"
+            v-model="category"
+          />
+          <label for="family"> Family</label>
+        </div>
+        <div class="business">
+          <input
+            type="radio"
+            id="business"
+            name="category"
+            value="business"
+            v-model="category"
+          />
+          <label for="business"> Business</label>
+        </div>
+        <div class="leisure">
+          <input
+            type="radio"
+            id="leisure"
+            name="category"
+            value="leisure"
+            v-model="category"
+          />
+          <label for="leisure"> Leisure</label>
+        </div>
+        <div class="other">
+          <input
+            checked
+            type="radio"
+            id="other"
+            name="category"
+            value="other"
+            v-model="category"
+          />
+          <label for="other"> Other</label>
+        </div>
+      </div>
+      <BlackButton class="button" @click="addTask">Add</BlackButton>
     </div>
   </div>
 </template>
@@ -119,6 +116,14 @@ const showAddTask = ref(false);
 const toggleShow = () => {
   showAddTask.value = !showAddTask.value;
 };
+
+// const setShowAddTask = () => {
+//   if (taskStore.tasks.length === 0) {
+//     showAddTask.value = true;
+//   }
+// };
+// setShowAddTask();
+// console.log(taskStore.tasks.length);
 </script>
 
 <style></style>

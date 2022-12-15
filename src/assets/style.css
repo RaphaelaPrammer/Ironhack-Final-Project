@@ -246,19 +246,19 @@ nav img {
   font-size: 1.7rem;
   text-align: center;
 }
-.add-new-task-and-button {
+/* .add-new-task-and-button {
   display: flex;
   align-items: flex-end;
   gap: 10px;
   text-align: center;
-}
-.btn-show-add-task {
+} */
+/* .btn-show-add-task {
   background-image: url("../assets/icons/add.png");
   background-size: contain;
   border: none;
   width: 30px;
   height: 30px;
-}
+} */
 .add-task-input {
   background-color: var(--colorLightGrey);
   font-size: 1rem;

@@ -10,24 +10,26 @@
         No open Tasks. Add a new Task now!
       </h4>
       <div class="container-all-tasks">
-        <TaskItem
-          v-for="task in tasksNotCompleted"
-          :key="task.id"
-          :task="task"
-          @getTasksHijo="getTasks"
-        />
+        <transition-group name="fade">
+          <TaskItem
+            v-for="task in tasksNotCompleted"
+            :key="task.id"
+            :task="task"
+            @getTasksHijo="getTasks"
+        /></transition-group>
       </div>
       <h2 class="task-heading">Completed Tasks</h2>
       <h4 class="task-subheading" v-if="!tasksCompleted.length">
         No completed Tasks yet. Start doing something!
       </h4>
       <div class="container-all-tasks">
-        <TaskItem
-          v-for="task in tasksCompleted"
-          :key="task.id"
-          :task="task"
-          @getTasksHijo="getTasks"
-        />
+        <transition-group name="fade">
+          <TaskItem
+            v-for="task in tasksCompleted"
+            :key="task.id"
+            :task="task"
+            @getTasksHijo="getTasks"
+        /></transition-group>
       </div>
     </div>
     <Footer />
@@ -62,11 +64,18 @@ const getTasks = async () => {
   tasksNotCompleted.value = tasks.value.filter((i) => i.is_complete === false);
 };
 getTasks();
-
-//
 </script>
 
-<style></style>
+<style scoped>
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+</style>
 
 <!-- 
 **Hints**
