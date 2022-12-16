@@ -5,6 +5,7 @@
 - [Git Hub Repo](https://github.com/RaphaelaPrammer/Ironhack-Final-Project)
 - [Trello](https://trello.com/b/lIvFDEqV/finalproject)
 - [Deploy of the project](https://ironhack-final-project.vercel.app/auth/login)
+- [Presentation](https://docs.google.com/presentation/d/1v3nWdXxi0NtfFo59yI-CdbKSPTiYaVEK_4Ru41ff_Dw/edit?usp=sharing)
 
 ## Project Description
 
