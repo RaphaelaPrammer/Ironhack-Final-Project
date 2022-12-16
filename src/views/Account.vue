@@ -1,8 +1,8 @@
 <template>
   <Nav />
 
-  <h1>Hello &#127789; {{ yourname }} !</h1>
-
+  <h1 v-if="yourname">Hello &#127789; {{ yourname }} !</h1>
+  <h1 v-else>Hello &#127789; {{ userStore.user.email }} !</h1>
   <h2>Your Account:</h2>
 
   <div class="container-account">

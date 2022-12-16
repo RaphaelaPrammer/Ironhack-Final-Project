@@ -44,7 +44,7 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
 ### 8.12.
 
 - [x] CSS Home (Task List)
-- [ ] Hamburger Menu
+- [x] Hamburger Menu
 - [x] Responsive Design SignIn, SignUP
 - [x] Responsive Design Home
 
@@ -77,7 +77,9 @@ This project is to build a simple To-do app with Vue.js that allows users to cre
   - [x] delete Card
   - [x] add Task with slide
 
----
+### 16.12.
 
-BOILERPLATE
-[Click para acceder a la web](https://todo-zantonz.vercel.app/)
+- [x] Code Cleaning
+- [x] Presentation slides
+- [x] Presentation
+- [x] Celebrate

@@ -177,26 +177,7 @@ const changeStatus = async () => {
 };
 </script>
 
-<style scoped>
-.top-category {
-  margin-top: 7px;
-  margin-bottom: 7px;
-  padding: 5px;
-  border-radius: 5px;
-}
-.task-family {
-  background: #7a4b94b0;
-}
-.task-business {
-  background: #7d82b8c2;
-}
-.task-leisure {
-  background: #b7e3ccb6;
-}
-.task-other {
-  background: #ffcf56ab;
-}
-</style>
+<style scoped></style>
 
 <!--
 **Hints**

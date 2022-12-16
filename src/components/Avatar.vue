@@ -85,20 +85,4 @@ watch(path, () => {
 });
 </script>
 
-<style scoped>
-.upload-image {
-  background-color: var(--colorBlack);
-  box-shadow: var(--box-shadow-small);
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  width: 90px;
-  padding: 4px 4px;
-}
-.upload-image:hover {
-  cursor: pointer;
-  background: var(--colorMnBlue);
-}
-</style>
+<style scoped></style>
